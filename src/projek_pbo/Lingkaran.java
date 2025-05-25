@@ -1,7 +1,7 @@
 package projek_pbo;
 
 public class Lingkaran extends BangunDatar {
-    protected double jariJari;
+    private double jariJari;
     protected final double PI = 3.14;
 
     public Lingkaran(double jariJari) {
@@ -21,4 +21,13 @@ public class Lingkaran extends BangunDatar {
         this.keliling = 2 * PI * jariJari;
         return keliling;
     }
+
+    public double getJariJari() {
+        return jariJari;
+    }
+
+    public double getPI(){
+        return Math.PI; 
+    }
+    
 }

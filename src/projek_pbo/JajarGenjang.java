@@ -26,4 +26,12 @@ public class JajarGenjang extends BangunDatar {
         this.luas = alas * tinggi;
         return luas;
     } 
+
+    public double getSisiA(){
+        return sisiA;
+    }
+
+    public double getSisiB(){
+        return sisiB;
+    }
 }

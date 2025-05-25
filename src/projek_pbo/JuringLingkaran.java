@@ -18,7 +18,7 @@ public class JuringLingkaran extends Lingkaran {
 
     @Override
     public double hitungKeliling() {
-        this.keliling = (sudutJuring / 360.0) * super.keliling + 2 * super.jariJari;;
+        this.keliling = (sudutJuring / 360.0) * super.keliling + 2 * super.getJariJari();;
         return keliling;
     }
 }

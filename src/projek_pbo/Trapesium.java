@@ -26,5 +26,18 @@ public class Trapesium extends BangunDatar {
         this.keliling =  alasAtas + alasBawah + 2 * sisiMiring;   
         return keliling;
     }
+
+    public double getAlasAtas() {
+        return alasAtas;
+    }
+
+    public double getAlasBawah() {
+        return alasBawah;
+    }
+
+    public double getSisiMiring() {
+        return sisiMiring;
+    }
+
 }
 

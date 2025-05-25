@@ -13,8 +13,8 @@ public class TemberengLingkaran extends Lingkaran {
     @Override
     public double hitungLuas() {
         double sudutRadian = Math.toRadians(sudut);
-        double luasJuring = (sudut / 360.0) * super.PI * super.jariJari * super.jariJari;
-        double luasSegitiga = 0.5 * super.jariJari * super.jariJari * Math.sin(sudutRadian);
+        double luasJuring = (sudut / 360.0) * super.getPI() * super.getJariJari() * super.getJariJari();
+        double luasSegitiga = 0.5 * super.getJariJari() * super.getJariJari() * Math.sin(sudutRadian);
         this.luas = luasJuring - luasSegitiga;
         return luas;
     }
@@ -22,8 +22,8 @@ public class TemberengLingkaran extends Lingkaran {
     @Override
     public double hitungKeliling() {
         double sudutRadian = Math.toRadians(sudut);
-        double panjangBusur = sudutRadian * super.jariJari;
-        double taliBusur = 2 * super.jariJari * Math.sin(sudutRadian / 2);
+        double panjangBusur = sudutRadian * super.getJariJari();
+        double taliBusur = 2 * super.getJariJari() * Math.sin(sudutRadian / 2);
         this.keliling = panjangBusur + taliBusur;
         return keliling;
     }

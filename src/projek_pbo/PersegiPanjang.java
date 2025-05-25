@@ -22,4 +22,12 @@ public class PersegiPanjang extends BangunDatar {
         this.keliling =  2 * (panjang + lebar);   
         return keliling;
     }
+
+    public double getPanjang() {
+        return panjang;
+    }
+
+    public double getLebar() {
+        return lebar;
+    }
 }

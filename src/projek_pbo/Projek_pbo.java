@@ -183,6 +183,20 @@ public class Projek_pbo {
                             System.out.println("7. Prisma Layang Layang"); 
                             System.out.println("8. Limas Segitiga"); 
                             System.out.println("9. Prisma Segitiga"); 
+                            System.out.println("10. Limas Jajar Genjang");
+                            System.out.println("11. Prisma Jajar Genjang"); 
+                            System.out.println("12. Limas Trapesium");
+                            System.out.println("13. Prisma Trapesium");
+                            System.out.println("14. Balok");
+                            System.out.println("15. Limas Persegi Panjang");
+                            System.out.println("16. Prisma Persegi Panjang");
+                            System.out.println("17. Bola ");
+                            System.out.println("18. Cincin Bola");
+                            System.out.println("19. Juring Bola ");
+                            System.out.println("20. Tembereng Bola ");
+                            System.out.println("21. Kerucut");
+                            System.out.println("22. Kerucut Terpancung");
+                            System.out.println("23. Tabung");
                             System.out.print("Masukkan pilihan bangun ruang : ");
                             int pilihanBangunRuang = input.nextInt();
 
@@ -304,6 +318,174 @@ public class Projek_pbo {
                                     PrismaLayangLayang prismaLayangLayang = new PrismaLayangLayang(diagonal1LayangLayangP, diagonal2LayangLayangP, sisiPanjangLayangLayangP, sisiPendekLayangLayangP, tinggiLayangLayangP);
                                     System.out.println("Volume PrismaLayangLayang = " + prismaLayangLayang.volume);
                                     System.out.println("Luas Permukaan PrismaLayangLayang = " + prismaLayangLayang.luasPermukaan);
+                                    break;
+                                case 8:
+                                    System.out.println("\n--- Menghitung Limas Segitiga  ---");
+
+                                    System.out.print("Masukkan nilai alas Segitiga : ");
+                                    double alasSegitigaL = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai tinggi Segitiga : ");
+                                    double tinggiSegitigaL = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai tinggi Limas Segitiga : ");
+                                    double tinggiLimasSegitiga = input.nextDouble();
+
+                                    LimasSegitiga limasSegitiga = new LimasSegitiga(alasSegitigaL, tinggiSegitigaL, tinggiLimasSegitiga);
+                                    System.out.println("Volume Limas Segitiga = " + limasSegitiga.volume);
+                                    System.out.println("Luas Permukaan Limas Segitiga = " + limasSegitiga.luasPermukaan);
+                                    break;
+                                case 9:
+                                    System.out.println("\n--- Menghitung Prisma Segitiga  ---");
+
+                                    System.out.print("Masukkan nilai alas Segitiga : ");
+                                    double alasSegitigaP = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai tinggi Segitiga : ");
+                                    double tinggiSegitigaP = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai tinggi Prisma Segitiga : ");
+                                    double tinggiPrismaSegitiga = input.nextDouble();
+
+                                    PrismaSegitiga prismaSegitiga = new PrismaSegitiga(alasSegitigaP, tinggiSegitigaP, tinggiPrismaSegitiga);
+                                    System.out.println("Volume Prisma Segitiga = " + prismaSegitiga.volume);
+                                    System.out.println("Luas Permukaan Prisma Segitiga = " + prismaSegitiga.luasPermukaan);
+                                    break;
+                                case 10:
+                                    System.out.println("\n--- Menghitung Limas Jajar Genjang  ---");
+
+                                    System.out.print("Masukkan nilai alas JajarGenjang : ");
+                                    double alasJajarGenjangL = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai tinggi Jajar Genjang : ");
+                                    double tinggiJajarGenjangL = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai sisi A Jajar Genjang : ");
+                                    double sisiAJajarGenjangL = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai sisi B Jajar Genjang : ");
+                                    double sisiBJajarGenjangL = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai tinggi Limas Jajar Genjang : ");
+                                    double tinggiLimasJajarGenjang = input.nextDouble();
+
+                                    LimasJajarGenjang limasJajarGenjang = new LimasJajarGenjang(alasJajarGenjangL, tinggiJajarGenjangL, sisiAJajarGenjangL, sisiBJajarGenjangL, tinggiLimasJajarGenjang);
+                                    System.out.println("Volume Limas Jajar Genjang = " + limasJajarGenjang.volume);
+                                    System.out.println("Luas Permukaan Limas Jajar Genjang = " + limasJajarGenjang.luasPermukaan);
+                                    break;
+                                case 11:
+                                    System.out.println("\n--- Menghitung Prisma Jajar Genjang  ---");
+
+                                    System.out.print("Masukkan nilai alas JajarGenjang : ");
+                                    double alasJajarGenjangP = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai tinggi Jajar Genjang : ");
+                                    double tinggiJajarGenjangP = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai sisi A Jajar Genjang : ");
+                                    double sisiAJajarGenjangP = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai sisi B Jajar Genjang : ");
+                                    double sisiBJajarGenjangP = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai tinggi Prisma Jajar Genjang : ");
+                                    double tinggiPrismaJajarGenjang = input.nextDouble();
+
+                                    PrismaJajarGenjang prismaJajarGenjang = new PrismaJajarGenjang(alasJajarGenjangP, tinggiJajarGenjangP, sisiAJajarGenjangP, sisiBJajarGenjangP, tinggiPrismaJajarGenjang);
+                                    System.out.println("Volume Prisma Jajar Genjang = " + prismaJajarGenjang.volume);
+                                    System.out.println("Luas Permukaan Prisma Jajar Genjang = " + prismaJajarGenjang.luasPermukaan);
+                                    break;
+                                case 12:
+                                    System.out.println("\n--- Menghitung Limas Trapesium  ---");
+
+                                    System.out.print("Masukkan nilai alas atas Trapesium : ");
+                                    double alasAtasTrapesiumL = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai alas bawah Trapesium : ");
+                                    double alasBawahTrapesiumL = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai sisi miring Trapesium : ");
+                                    double sisiMiringTrapesiumL = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai tinggi Trapesium : ");
+                                    double tinggiTrapesiumL = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai tinggi Limas Trapesium : ");
+                                    double tinggiLimasTrapesium = input.nextDouble();
+
+                                    LimasTrapesium limasTrapesium = new LimasTrapesium(alasAtasTrapesiumL, alasBawahTrapesiumL, sisiMiringTrapesiumL, tinggiTrapesiumL, tinggiLimasTrapesium);
+                                    System.out.println("Volume Limas Trapesium = " + limasTrapesium.volume);
+                                    System.out.println("Luas Permukaan Limas Trapesium = " + limasTrapesium.luasPermukaan);
+                                    break;
+                                case 13:
+                                    System.out.println("\n--- Menghitung Prisma Trapesium  ---");
+
+                                    System.out.print("Masukkan nilai alas atas Trapesium : ");
+                                    double alasAtasTrapesiumP = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai alas bawah Trapesium : ");
+                                    double alasBawahTrapesiumP = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai sisi miring Trapesium : ");
+                                    double sisiMiringTrapesiumP = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai tinggi Trapesium : ");
+                                    double tinggiTrapesiumP = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai tinggi Prisma Trapesium : ");
+                                    double tinggiPrismaTrapesium = input.nextDouble();
+
+                                    PrismaTrapesium prismaTrapesium = new PrismaTrapesium(alasAtasTrapesiumP, alasBawahTrapesiumP, sisiMiringTrapesiumP, tinggiTrapesiumP, tinggiPrismaTrapesium);
+                                    System.out.println("Volume Prisma Trapesium = " + prismaTrapesium.volume);
+                                    System.out.println("Luas Permukaan Prisma Trapesium = " + prismaTrapesium.luasPermukaan);
+                                    break;
+                                case 14:
+                                    System.out.println("\n--- Menghitung Balok ---");
+
+                                    System.out.print("Masukkan nilai panjang balok : ");
+                                    double panjangBalok = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai lebar balok : ");
+                                    double lebarBalok = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai tinggi balok : ");
+                                    double tinggiBalok = input.nextDouble();
+
+                                    Balok balok = new Balok(panjangBalok, lebarBalok, tinggiBalok);
+                                    System.out.println("Volume Balok = " + balok.volume);
+                                    System.out.println("Luas Permukaan Balok = " + balok.luasPermukaan);
+                                    break;
+                                case 15:
+                                    System.out.println("\n--- Menghitung Limas Persegi Panjang ---");
+
+                                    System.out.print("Masukkan nilai panjang Limas Persegi Panjang : ");
+                                    double panjangLimasPersegiPanjang = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai lebar Limas Persegi Panjang : ");
+                                    double lebarLimasPersegiPanjang = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai tinggi Limas Persegi Panjang : ");
+                                    double tinggiLimasPersegiPanjang = input.nextDouble();
+
+                                    LimasPersegiPanjang limasPersegiPanjang = new LimasPersegiPanjang(panjangLimasPersegiPanjang, lebarLimasPersegiPanjang, tinggiLimasPersegiPanjang);
+                                    System.out.println("Volume Limas Persegi Panjang = " + limasPersegiPanjang.volume);
+                                    System.out.println("Luas Permukaan Limas Persegi Panjang = " + limasPersegiPanjang.luasPermukaan);
+                                    break;
+                                case 16:
+                                    System.out.println("\n--- Menghitung Prisma Persegi Panjang ---");
+
+                                    System.out.print("Masukkan nilai panjang Prisma Persegi Panjang : ");
+                                    double panjangPrismaPersegiPanjang = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai lebar Prisma Persegi Panjang : ");
+                                    double lebarPrismaPersegiPanjang = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai tinggi Prisma Persegi Panjang : ");
+                                    double tinggiPrismaPersegiPanjang = input.nextDouble();
+
+                                    PrismaPersegiPanjang prismaPersegiPanjang = new PrismaPersegiPanjang(panjangPrismaPersegiPanjang, lebarPrismaPersegiPanjang, tinggiPrismaPersegiPanjang);
+                                    System.out.println("Volume Prisma Persegi Panjang = " + prismaPersegiPanjang.volume);
+                                    System.out.println("Luas Permukaan Prisma Persegi Panjang = " + prismaPersegiPanjang.luasPermukaan);
                                     break;
                                 default:
                                     System.out.println("Pilihan bangun ruang tidak valid.");

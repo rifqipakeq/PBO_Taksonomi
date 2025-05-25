@@ -1,7 +1,6 @@
 package projek_pbo;
 
 public class Segitiga extends BangunDatar {
-    private double sisi;
     private double alas;
     private double tinggi;
 
@@ -22,5 +21,9 @@ public class Segitiga extends BangunDatar {
     public double hitungKeliling() {
         this.keliling =  3 * alas;   
         return keliling;
+    }
+
+    public double getSisi(){
+        return alas;
     }
 }
