@@ -179,6 +179,10 @@ public class Projek_pbo {
                             System.out.println("3. Prisma Persegi"); 
                             System.out.println("4. Limas Belah Ketupat");
                             System.out.println("5. Prisma Belah Ketupat"); 
+                            System.out.println("6. Limas Layang Layang"); 
+                            System.out.println("7. Prisma Layang Layang"); 
+                            System.out.println("8. Limas Segitiga"); 
+                            System.out.println("9. Prisma Segitiga"); 
                             System.out.print("Masukkan pilihan bangun ruang : ");
                             int pilihanBangunRuang = input.nextInt();
 
@@ -256,6 +260,50 @@ public class Projek_pbo {
                                     PrismaBelahKetupat prismaBelahKetupat = new PrismaBelahKetupat(diagonal1BelahKetupatP, diagonal2BelahKetupatP, sisiBelahKetupatP, tinggiBelahKetupatP);
                                     System.out.println("Volume PrismaBelahKetupat = " + prismaBelahKetupat.volume);
                                     System.out.println("Luas Permukaan PrismaBelahKetupat = " + prismaBelahKetupat.luasPermukaan);
+                                    break;
+                                case 6:
+                                    System.out.println("\n--- Menghitung Limas Layang Layang ---");
+
+                                    System.out.print("Masukkan nilai diagonal 1 Limas Layang Layang : ");
+                                    double diagonal1LayangLayangL = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai diagonal 2 Limas Layang Layang : ");
+                                    double diagonal2LayangLayangL = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai sisi panjang Limas Layang Layang : ");
+                                    double sisiPanjangLayangLayangL = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai sisi pendek Limas Layang Layang : ");
+                                    double sisiPendekLayangLayangL = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai tinggi Limas Layang Layang : ");
+                                    double tinggiLayangLayangL = input.nextDouble();
+
+                                    LimasLayangLayang limasLayangLayang = new LimasLayangLayang(diagonal1LayangLayangL, diagonal2LayangLayangL, sisiPanjangLayangLayangL, sisiPendekLayangLayangL, tinggiLayangLayangL);
+                                    System.out.println("Volume LimasLayangLayang = " + limasLayangLayang.volume);
+                                    System.out.println("Luas Permukaan LimasLayangLayang = " + limasLayangLayang.luasPermukaan);
+                                    break;
+                                case 7:
+                                    System.out.println("\n--- Menghitung Prisma Layang Layang ---");
+
+                                    System.out.print("Masukkan nilai diagonal 1 Prisma Layang Layang : ");
+                                    double diagonal1LayangLayangP = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai diagonal 2 Prisma Layang Layang : ");
+                                    double diagonal2LayangLayangP = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai sisi panjang Prisma Layang Layang : ");
+                                    double sisiPanjangLayangLayangP = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai sisi pendek Prisma Layang Layang : ");
+                                    double sisiPendekLayangLayangP = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai tinggi Prisma Layang Layang : ");
+                                    double tinggiLayangLayangP = input.nextDouble();
+
+                                    PrismaLayangLayang prismaLayangLayang = new PrismaLayangLayang(diagonal1LayangLayangP, diagonal2LayangLayangP, sisiPanjangLayangLayangP, sisiPendekLayangLayangP, tinggiLayangLayangP);
+                                    System.out.println("Volume PrismaLayangLayang = " + prismaLayangLayang.volume);
+                                    System.out.println("Luas Permukaan PrismaLayangLayang = " + prismaLayangLayang.luasPermukaan);
                                     break;
                                 default:
                                     System.out.println("Pilihan bangun ruang tidak valid.");

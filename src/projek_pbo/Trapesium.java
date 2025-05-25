@@ -27,3 +27,4 @@ public class Trapesium extends BangunDatar {
         return keliling;
     }
 }
+

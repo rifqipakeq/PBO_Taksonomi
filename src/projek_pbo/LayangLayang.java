@@ -28,27 +28,12 @@ public class LayangLayang extends BangunDatar {
         this.keliling =  2 * (sisiPendek + sisiPanjang);
         return keliling;
     }
+
+    public double getSisiPendek(){
+        return sisiPendek;
+    }
+
+    public double getSisiPanjang(){
+        return sisiPanjang;
+    }
 }
-
-//   switch (pilihan) {
-//                             case 1:
-//                                 System.out.println("\n=== Bangun Ruang ===");
-//                                 System.out.println("1. Kubus");
-//                                 System.out.print("Masukkan pilihan bangun ruang : ");
-//                                 int pilihanBangunRuang = input.nextInt();
-
-//                                 switch (pilihanBangunRuang) {
-//                                     case 1:
-//                                         System.out.println("\n--- Menghitung Kubus ---");
-
-//                                         System.out.print("Masukkan nilai sisi kubus : ");
-//                                         double sisiKubus = input.nextDouble();
-
-//                                         Kubus kubus = new Kubus(sisiKubus);
-//                                         System.out.println("Luas Kubus = " + kubus.volume);
-//                                         System.out.println("Keliling Kubus = " + kubus.luasPermukaan);
-//                                         break;
-//                                     default:
-//                                         System.out.println("Pilihan bangun datar tidak valid.");
-//                                 }
-//                         }
