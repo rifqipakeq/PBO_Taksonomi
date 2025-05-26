@@ -2,8 +2,8 @@ package projek_pbo;
 
 public class TemberengBola extends Bola {
     private double tinggiTembereng;
-    protected double volume;
-    protected double luasPermukaan;
+    private double volume;
+    private double luasPermukaan;
 
     public TemberengBola(double jariJari, double tinggiTembereng) {
         super(jariJari);

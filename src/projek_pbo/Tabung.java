@@ -2,8 +2,8 @@ package projek_pbo;
 
 public class Tabung extends Lingkaran {
     private double tinggi;
-    protected double volume;
-    protected double luasPermukaan;
+    private double volume;
+    private double luasPermukaan;
 
     public Tabung(double jariJari, double tinggi) {
         super(jariJari);

@@ -2,8 +2,8 @@ package projek_pbo;;
 
 public class PrismaPersegiPanjang extends PersegiPanjang{
     private double tinggi;
-    protected double volume;
-    protected double luasPermukaan;
+    private double volume;
+    private double luasPermukaan;
 
     public PrismaPersegiPanjang(double panjang, double lebar, double tinggi) {
         super(panjang, lebar);

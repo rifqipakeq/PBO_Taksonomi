@@ -2,8 +2,8 @@ package projek_pbo;
 
 public class LimasPersegiPanjang extends PersegiPanjang {
     private double tinggi;
-    protected double volume;
-    protected double luasPermukaan;
+    private double volume;
+    private double luasPermukaan;
 
     public LimasPersegiPanjang(double panjang, double lebar, double tinggi) {
         super(panjang, lebar);

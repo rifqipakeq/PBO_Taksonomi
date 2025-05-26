@@ -2,8 +2,8 @@ package projek_pbo;
 
 public class PrismaJajarGenjang extends JajarGenjang {
     private double tinggiPrisma;
-    protected double volume;
-    protected double luasPermukaan;
+    private double volume;
+    private double luasPermukaan;
 
     public PrismaJajarGenjang(double alas, double tinggiAlas, double sisiA, double sisiB, double tinggiPrisma) {
         super(alas, tinggiAlas, sisiA, sisiB);

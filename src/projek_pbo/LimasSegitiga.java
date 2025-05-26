@@ -2,8 +2,8 @@ package projek_pbo;
 
 public class LimasSegitiga extends Segitiga {
     private double tinggiLimas;
-    protected double volume;
-    protected double luasPermukaan;
+    private double volume;
+    private double luasPermukaan;
 
     public LimasSegitiga(double alas,double tinggi, double tinggiLimas) {
         super(alas, tinggi);    

@@ -2,8 +2,8 @@ package projek_pbo;
 
 public class JuringBola extends Bola {
     private double sudutDerajat;
-    protected double volume;
-    protected double luasPermukaan;
+    private double volume;
+    private double luasPermukaan;
 
     public JuringBola(double jariJari, double sudutDerajat) {
         super(jariJari);

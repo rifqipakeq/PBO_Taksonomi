@@ -3,8 +3,8 @@ package projek_pbo;
 public class PrismaPersegi extends Persegi {
     private Persegi alas;
     private double tinggi;
-    protected double volume;
-    protected double luasPermukaan;
+    private double volume;
+    private double luasPermukaan;
 
     public PrismaPersegi(double sisi, double tinggi) {
         super(sisi);

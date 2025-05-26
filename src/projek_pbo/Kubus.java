@@ -1,8 +1,8 @@
 package projek_pbo;
 
 public class Kubus extends Persegi{
-    protected double volume;
-    protected double luasPermukaan;
+    private double volume;
+    private double luasPermukaan;
 
     public Kubus(double sisi) {
         super(sisi);
@@ -11,12 +11,12 @@ public class Kubus extends Persegi{
     }
 
     public double hitungVolume() {
-        volume =  super.hitungLuas() * super.getSisi();
+        volume =  super.luas * super.getSisi();
         return volume;
     }
 
     public double hitungLuasPermukaan() {
-        luasPermukaan = super.hitungLuas() * 6;
+        luasPermukaan = super.luas * 6;
         return luasPermukaan;
     }
 }

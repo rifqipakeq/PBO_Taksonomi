@@ -2,8 +2,8 @@ package projek_pbo;
 
 public class PrismaTrapesium extends Trapesium {
     private double tinggiPrisma;
-    protected double volume;
-    protected double luasPermukaan;
+    private double volume;
+    private double luasPermukaan;
 
     public PrismaTrapesium( double alasAtas,double alasBawah,double sisiMiring, double tinggi, double tinggiPrisma) {
         super(alasAtas, alasBawah, sisiMiring, tinggi);

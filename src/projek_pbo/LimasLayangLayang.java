@@ -2,8 +2,8 @@ package projek_pbo;
 
 public class LimasLayangLayang extends LayangLayang {
     private double tinggi;
-    protected double volume;
-    protected double luasPermukaan;
+    private double volume;
+    private double luasPermukaan;
 
     public LimasLayangLayang(double diagonal1, double diagonal2, double sisiPendek, double sisiPanjang, double tinggi) {
         super(diagonal1, diagonal2, sisiPendek, sisiPanjang);

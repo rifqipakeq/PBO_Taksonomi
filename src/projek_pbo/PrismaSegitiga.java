@@ -2,8 +2,8 @@ package projek_pbo;
 
 public class PrismaSegitiga extends Segitiga {
     private double tinggiPrisma;
-    protected double volume;
-    protected double luasPermukaan;
+    private double volume;
+    private double luasPermukaan;
 
     public PrismaSegitiga(double alas, double tinggi, double tinggiPrisma) {
         super(alas, tinggi);
