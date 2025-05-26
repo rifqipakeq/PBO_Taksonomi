@@ -1,13 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package projek_pbo;
 
-/**
- *
- * @author ASUS
- */
-public class TemberengBola {
-    
+public class TemberengBola extends Bola {
+    private double tinggiTembereng;
+    protected double volume;
+    protected double luasPermukaan;
+
+    public TemberengBola(double jariJari, double tinggiTembereng) {
+        super(jariJari);
+        this.tinggiTembereng = tinggiTembereng;
+        this.hitungVolume();
+        this.hitungLuasPermukaan();
+    }
+
+    public double hitungVolume() {
+        double r = super.getJariJari();
+        double h = tinggiTembereng;
+        volume = (1.0 / 6.0) * super.getPI() * h * (3 * r * r + h * h);
+        return volume;
+    }
+
+    public double hitungLuasPermukaan() {
+        double r = super.getJariJari();
+        double h = tinggiTembereng;
+        luasPermukaan = 2 * super.getPI() * r * h;
+        return luasPermukaan;
+    }
 }
