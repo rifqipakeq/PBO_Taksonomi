@@ -913,8 +913,6 @@ public class Main {
                             } catch(Exception e){
                                 System.out.println("Tabung tidak bisa dibuat dengan nilai jari-jari dan tinggi yang kurang dari 0 dan negatif!");
                             }
-
-
                             break;
                         case 4:
                             System.out.println("Keluar dari program. Terima kasih!");
@@ -924,12 +922,11 @@ public class Main {
                     }
                 } catch (InputMismatchException e) {
                     System.out.println("Input tidak valid. Harap masukkan angka sesuai pilihan.");
-                    input.nextLine(); // Membersihkan buffer scanner dari input yang salah
-                    pilihan = 0; // Reset pilihan agar loop berlanjut
+                    input.nextLine(); 
+                    pilihan = 0; 
                 }
             } while (pilihan != 4);
-
-        } // Scanner akan otomatis ditutup di sini
+        } 
         System.out.println("Program telah berakhir.");
     }
 }
