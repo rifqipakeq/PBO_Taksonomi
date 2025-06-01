@@ -62,8 +62,8 @@ public class Lingkaran extends BangunDatar {
                         System.out.println("Input jari-jari harus berupa angka.");
                         inp.nextLine();
                     }
+                    break;
                 }
-                break;
             } else if (jawab.equalsIgnoreCase("N")) {
                 luas = hitungLuas();
                 keliling = hitungKeliling();

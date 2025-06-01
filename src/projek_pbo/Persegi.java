@@ -73,5 +73,8 @@ public class Persegi extends BangunDatar {
         }
     }
 
+    public double getSisi() {
+        return sisi;
+    }
 
 }                                   

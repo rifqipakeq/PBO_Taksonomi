@@ -3,7 +3,6 @@ import java.util.Scanner;
 import java.util.InputMismatchException;
 
 public class PrismaPersegi extends Persegi {
-    private Persegi alas;
     private double tinggi;
     private double volume;
     private double luasPermukaan;
@@ -11,8 +10,8 @@ public class PrismaPersegi extends Persegi {
     public PrismaPersegi(double sisi, double tinggi) {
         super(sisi);
         this.tinggi = tinggi;
-        this.hitungVolume();
-        this.hitungLuasPermukaan();
+        this.volume = hitungVolume();
+        this.luasPermukaan = hitungLuasPermukaan();
     }
 
     public double hitungVolume() {
@@ -31,7 +30,8 @@ public class PrismaPersegi extends Persegi {
     }
 
     public double hitungLuasPermukaan(double sisiBaru, double tinggiBaru) {
-        luasPermukaan = 2 * super.hitungLuas(sisiBari) + super.hitungKeliling(sisibaru) * tinggiBaru;
+        luasPermukaan = 2 * super.hitungLuas(sisiBaru) + super.hitungKeliling(tinggiBaru) * tinggiBaru;
+        return luasPermukaan;
     }
 
     public void prosesInputDanValidasi(){
@@ -67,14 +67,14 @@ public class PrismaPersegi extends Persegi {
                         inp.nextLine();
                     }
                     break;
-                } else if (jawab.equalsIgnoreCase("N")) {
-                    luasPermukaan = hitungLuasPermukaan();
-                    volume = hitungVolume();
-                    break;
-                } else {
-                    System.out.println("Jawaban hanya boleh Y atau N\n");
-                } 
-            }
+                }
+            } else if (jawab.equalsIgnoreCase("N")) {
+                luasPermukaan = hitungLuasPermukaan();
+                volume = hitungVolume();
+                break;
+            } else {
+                System.out.println("Jawaban hanya boleh Y atau N\n");
+            } 
         }
     }
 
