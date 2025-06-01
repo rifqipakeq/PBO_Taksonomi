@@ -9,6 +9,12 @@ public class Main {
         System.out.printf("\nLuas Lingkaran: %.2f\n", lingkaran.hitungLuas());
         System.out.printf("Keliling Lingkaran: %.2f\n", lingkaran.hitungKeliling());
         lingkaran.prosesInputDanValidasi();
+
+        Persegi persegi = new Persegi(5);
+        System.out.printf("\nLuas Persegi: %.2f\n", persegi.hitungLuas());
+        System.out.printf("Keliling Persegi: %.2f\n", persegi.hitungKeliling());
+        persegi.prosesInputDanValidasi();
+
 //
 //         JuringLingkaran juringLingkaran = new JuringLingkaran(lingkaran.getJariJari(), 90);
 //         System.out.printf("\nLuas Juring Lingkaran: %.2f\n", juringLingkaran.hitungLuas());
@@ -29,7 +35,12 @@ public class Main {
         System.out.printf("\nLuas Permukaan Tabung: %.2f\n", tabung.hitungLuasPermukaan());
         System.out.printf("Volume Tabung: %.2f\n", tabung.hitungVolume());
         tabung.prosesInputDanValidasi();
-        
+
+        PrismaPersegi prisma = new PrismaPersegi(5, 10);
+        System.out.printf("\nLuas Permukaan Prisma Persegi: %.2f\n", prisma.hitungLuasPermukaan());
+        System.out.printf("Volume Prisma Persegi: %.2f\n", prisma.hitungVolume());
+        prisma.prosesInputDanValidasi();
+
         System.out.println("\nProgram selesai.");
     }
 }
