@@ -1,12 +1,12 @@
 package projek_pbo;
 
 public class Persegi extends BangunDatar {
-    private double sisi;
+    protected double sisi;
 
     public Persegi(double sisi) {
         this.sisi = sisi;
-        this.hitungKeliling();
         this.hitungLuas();
+        this.hitungKeliling();
     }
  
     @Override
@@ -19,9 +19,5 @@ public class Persegi extends BangunDatar {
     public double hitungKeliling() {
         this.keliling =  4 * sisi;   
         return keliling;
-    }
-
-    public double getSisi() {
-        return sisi;
     }
 }                                   

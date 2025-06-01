@@ -1,4 +1,4 @@
-package projek_pbo;
+    package projek_pbo;
 
 public interface BendaGeometri {
     double hitungLuas();

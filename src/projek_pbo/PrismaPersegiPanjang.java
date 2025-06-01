@@ -8,8 +8,6 @@ public class PrismaPersegiPanjang extends PersegiPanjang{
     public PrismaPersegiPanjang(double panjang, double lebar, double tinggi) {
         super(panjang, lebar);
         this.tinggi = tinggi;
-        this.hitungVolume();
-        this.hitungLuasPermukaan();
     }
 
     public double hitungVolume() {
@@ -20,7 +18,7 @@ public class PrismaPersegiPanjang extends PersegiPanjang{
     public double hitungLuasPermukaan() {
         double luasAlas = super.luas;
         double kelilingAlas = super.keliling;
-        luasPermukaan =  2 * luasAlas + kelilingAlas * tinggi;
+        luasPermukaan =  2 * super.luas + super.keliling * tinggi;
         return luasPermukaan;
     }
 }

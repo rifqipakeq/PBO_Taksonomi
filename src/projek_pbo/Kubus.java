@@ -11,7 +11,7 @@ public class Kubus extends Persegi{
     }
 
     public double hitungVolume() {
-        volume =  super.luas * super.getSisi();
+        volume =  super.luas * super.sisi;
         return volume;
     }
 

@@ -3,12 +3,12 @@ package projek_pbo;
 public class PersegiPanjang extends BangunDatar {
     private double panjang;
     private double lebar;
+    protected double luas;
+    protected double keliling;
 
     public PersegiPanjang(double panjang, double lebar) {   
         this.panjang = panjang;
         this.lebar = lebar;
-        this.hitungKeliling();
-        this.hitungLuas();
     }
 
     @Override
