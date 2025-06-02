@@ -80,6 +80,7 @@ public class Main {
                             PersegiPanjang persegipanjang = new PersegiPanjang(15, 10);
                             System.out.printf("Luas PersegiPanjang: %.2f\n", persegipanjang.hitungLuas());
                             System.out.printf("Keliling PersegiPanjang: %.2f\n", persegipanjang.hitungKeliling());
+                            persegipanjang.prosesInputDanValidasi();
                             break;
                         case 5:
                             LayangLayang layanglayang = new LayangLayang(15, 10, 8, 12);
@@ -186,6 +187,7 @@ public class Main {
                             Balok balok = new Balok(10, 12, 15);
                             System.out.printf("Luas Permukaan Balok: %.2f\n", balok.hitungLuasPermukaan());
                             System.out.printf("Volume Limas Balok: %.2f\n", balok.hitungVolume());
+                            balok.prosesInputDanValidasi();
                             break;
                         case 25:
                             LimasPersegiPanjang limasPersegiPanjang = new LimasPersegiPanjang(8, 10, 12);
@@ -260,7 +262,7 @@ public class Main {
                             if (!shapes.isEmpty()) {
                                 System.out.println("\nMemulai pemrosesan " + shapes.size() + " objek geometri dengan Thread Pool...");
                                 ThreadExecutor.processShapes(shapes);
-                                System.out.println("Pemrosesan selesai. Hasil ada di atas (mungkin tercampur karena multithreading).");
+                                System.out.println("Pemrosesan selesai");
                             } else {
                                 System.out.println("Tidak ada objek geometri yang digenerate.");
                             }
@@ -295,7 +297,6 @@ public class Main {
             }
         }
     }
-    
     
     private static double r(){
         return 1 + Math.random() * 10;

@@ -28,6 +28,7 @@ public class LayangLayang extends BangunDatar {
         this.keliling =  2 * (sisiPendek + sisiPanjang);
         return keliling;
     }
+    
 
     public double getSisiPendek(){
         return sisiPendek;
