@@ -238,9 +238,12 @@ public class Main {
                             break;
                         case 34:
                             BangunDatar bd1 = new Lingkaran(7);
-                            BangunDatar bd2 = new Bola(14);
-                            System.out.println("Luas Lingkaran (bd1): " + bd1.hitungLuas());
-                            System.out.println("Luas Bola (bd2): " + bd2.hitungLuas());
+                            BangunDatar bd2 = new JajarGenjang(10, 12, 8, 8);
+                            BangunDatar bd3 = new PersegiPanjang(10, 8);
+                            
+                            System.out.println("Luas Lingkaran (bd1): " + bd1.hitungLuas() + "Dan Keliling : " + bd1.hitungKeliling());
+                            System.out.println("Luas JajarGenjang (bd2): " + bd2.hitungLuas() +"Dan Keliling : " + bd2.hitungKeliling());
+                            System.out.println("Luas PersegiPanjang (bd3): " + bd3.hitungLuas() + "Dan Keliling : " + bd3.hitungKeliling());
                             break;
                         case 35:
                             System.out.println("Terimakasih Telah menggunakan Program ini.");
