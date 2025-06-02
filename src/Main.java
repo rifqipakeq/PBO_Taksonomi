@@ -1,6 +1,11 @@
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
+import java.util.List;
+import threading.ThreadExecutor;
+import java.util.*;
 import projek_pbo.*;
 
 public class Main {
@@ -8,6 +13,8 @@ public class Main {
     public static void main(String[] args) {
 
         try (Scanner input = new Scanner(System.in)) {
+            List<BendaGeometri> shapes = new ArrayList<>();
+            Random random = new Random();
             int pilihan;
             boolean lanjutMenu = true;
             do {
@@ -47,10 +54,12 @@ public class Main {
                 System.out.println("33. Tabung");
                 System.out.println("34. Polymorphism");
                 System.out.println("35. Exit");
+                System.out.println("36. Proses Geometri Acak dengan Thread pool");
                 System.out.print("Masukkan pilihan anda : ");
 
                 try {
                     pilihan = input.nextInt();
+                    input.nextLine();
                     switch (pilihan) {
                         case 1:
                             Segitiga segitiga = new Segitiga(10, 5);
@@ -234,10 +243,32 @@ public class Main {
                         case 35:
                             System.out.println("Terimakasih Telah menggunakan Program ini.");
                             break;
+                        case 36:
+                             System.out.print("Masukkan jumlah objek per bentuk geometri untuk digenerate: ");
+                            int jumlahPerBentuk = input.nextInt();
+                            input.nextLine();
+                            shapes.clear();
+                            for (int i = 1; i <= 33; i++){
+                                for (int j = 0; j < jumlahPerBentuk;j++){
+                                    try {
+                                        shapes.add(generateRandomBendaGeometri(i));
+                                    } catch (IllegalArgumentException e) {
+                                        System.out.println("Error saat generate bentuk geometri: " + e.getMessage());
+                                    }
+                                }
+                            }
+                            if (!shapes.isEmpty()) {
+                                System.out.println("\nMemulai pemrosesan " + shapes.size() + " objek geometri dengan Thread Pool...");
+                                ThreadExecutor.processShapes(shapes);
+                                System.out.println("Pemrosesan selesai. Hasil ada di atas (mungkin tercampur karena multithreading).");
+                            } else {
+                                System.out.println("Tidak ada objek geometri yang digenerate.");
+                            }
+                            break;
                         default:
                             System.out.println("Pilihan tidak valid. Silakan coba lagi.");
                     }
-                    if (pilihan != 35) {
+                    if (pilihan != 36) {
                         lanjutMenu = tanyaKembaliKeMenu(input);
                     }
                 } catch (InputMismatchException e) {
@@ -245,7 +276,7 @@ public class Main {
                     input.nextLine();
                     pilihan = 0;
                 }
-            } while (pilihan != 35);
+            } while (pilihan != 36);
         }
         System.out.println("Program telah berakhir.");
     }
@@ -264,4 +295,54 @@ public class Main {
             }
         }
     }
+    
+    
+    private static double r(){
+        return 1 + Math.random() * 10;
+    }
+    
+    private static double r(double min, double max){
+        return min + Math.random() * (max - min);
+    }
+    
+    private static BendaGeometri generateRandomBendaGeometri(int choice) {
+        return switch (choice){
+            case 1 -> new Segitiga(r(), r());
+            case 2 -> new JajarGenjang(r(), r(), r(), r());
+            case 3 -> new BelahKetupat(r(), r(), r());
+            case 4 -> new PersegiPanjang(r(), r());
+            case 5 -> new LayangLayang(r(), r(), r(), r());
+            case 6 -> new Persegi(r());
+            case 7 -> new Trapesium(r(), r(), r(), r());
+            case 8 -> new Lingkaran(r());
+            case 9 -> new JuringLingkaran(r(), r(1, 360));
+            case 10 -> new TemberengLingkaran(r(), r(1, 360));
+            case 11 -> new Kubus(r());
+            case 12 -> new LimasPersegi(r(), r());
+            case 13 -> new PrismaPersegi(r(), r());
+            case 14 -> new LimasBelahKetupat(r(), r(), r(), r());
+            case 15 -> new PrismaBelahKetupat(r(), r(), r(), r());
+            case 16 -> new LimasLayangLayang(r(), r(), r(), r(), r());
+            case 17 -> new PrismaLayangLayang(r(), r(), r(), r(), r());
+            case 18 -> new LimasSegitiga(r(), r(), r());
+            case 19 -> new PrismaSegitiga(r(), r(), r());
+            case 20 -> new LimasJajarGenjang(r(), r(), r(), r(), r());
+            case 21 -> new PrismaJajarGenjang(r(), r(), r(), r(), r());
+            case 22 -> new LimasTrapesium(r(), r(), r(), r(), r());
+            case 23 -> new PrismaTrapesium(r(), r(), r(), r(), r());
+            case 24 -> new Balok(r(), r(), r());
+            case 25 -> new LimasPersegiPanjang(r(), r(), r());
+            case 26 -> new PrismaPersegiPanjang(r(), r(), r());
+            case 27 -> new Bola(r());
+            case 28 -> new CincinBola(r(), r());
+            case 29 -> new JuringBola(r(), r(1, 360));
+            case 30 -> new TemberengBola(r(), r());
+            case 31 -> new Kerucut(r(), r());
+            case 32 -> new KerucutTerpancung(r(), r(), r());
+            case 33 -> new Tabung(r(), r());
+            default -> throw new IllegalArgumentException("Pilihan bentuk geometri tidak valid untuk generator acak: " + choice);
+        };
+    }
+
+
 }
