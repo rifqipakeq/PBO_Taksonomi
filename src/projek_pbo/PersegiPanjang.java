@@ -1,5 +1,8 @@
 package projek_pbo;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public class PersegiPanjang extends BangunDatar {
     private double panjang;
     private double lebar;
@@ -77,5 +80,13 @@ public class PersegiPanjang extends BangunDatar {
 
     public double getLebar() {
         return lebar;
+    }
+
+    public double getLuas() {
+        return luas;
+    }
+
+    public double getKeliling() {
+        return keliling;
     }
 }

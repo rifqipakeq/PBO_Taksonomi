@@ -65,16 +65,19 @@ public class Main {
                             Segitiga segitiga = new Segitiga(10, 5);
                             System.out.printf("Luas Segitiga: %.2f\n", segitiga.hitungLuas());
                             System.out.printf("Keliling Segitiga: %.2f\n", segitiga.hitungKeliling());
+                            segitiga.prosesInputDanValidasi();
                             break;
                         case 2:
                             JajarGenjang jajargenjang = new JajarGenjang(10, 12, 8, 6);
                             System.out.printf("Luas JajarGenjang: %.2f\n", jajargenjang.hitungLuas());
                             System.out.printf("Keliling JajarGenjang: %.2f\n", jajargenjang.hitungKeliling());
+                            jajargenjang.prosesInputDanValidasi();
                             break;
                         case 3:
                             BelahKetupat belahketupat = new BelahKetupat(10, 12, 10);
                             System.out.printf("Luas BelahKetupat: %.2f\n", belahketupat.hitungLuas());
                             System.out.printf("Keliling BelahKetupat: %.2f\n", belahketupat.hitungKeliling());
+                            belahketupat.prosesInputDanValidasi();
                             break;
                         case 4:
                             PersegiPanjang persegipanjang = new PersegiPanjang(15, 10);
@@ -86,6 +89,7 @@ public class Main {
                             LayangLayang layanglayang = new LayangLayang(15, 10, 8, 12);
                             System.out.printf("Luas LayangLayang: %.2f\n", layanglayang.hitungLuas());
                             System.out.printf("Keliling LayangLayang: %.2f\n", layanglayang.hitungKeliling());
+                            layanglayang.prosesInputDanValidasi();
                             break;
                         case 6:
                             Persegi persegi = new Persegi(5);
@@ -97,6 +101,7 @@ public class Main {
                             Trapesium trapesium = new Trapesium(10, 8, 12, 15);
                             System.out.printf("Luas Trapesium: %.2f\n", trapesium.hitungLuas());
                             System.out.printf("Keliling Trapesium: %.2f\n", trapesium.hitungKeliling());
+                            trapesium.prosesInputDanValidasi();
                             break;
                         case 8:
                             Lingkaran lingkaran = new Lingkaran(7);
@@ -120,6 +125,7 @@ public class Main {
                             Kubus kubus = new Kubus(10);
                             System.out.printf("Luas Permukaan Kubus: %.2f\n", kubus.hitungLuasPermukaan());
                             System.out.printf("Volume Limas Kubus: %.2f\n", kubus.hitungVolume());
+                            kubus.prosesInputDanValidasi();
                             break;
                         case 12:
                             LimasPersegi limasPersegi = new LimasPersegi(5, 10);
@@ -137,51 +143,61 @@ public class Main {
                             LimasBelahKetupat limasBelahKetupat = new LimasBelahKetupat(5, 10, 12, 8);
                             System.out.printf("Luas Permukaan Limas BelahKetupat: %.2f\n", limasBelahKetupat.hitungLuasPermukaan());
                             System.out.printf("Volume Limas BelahKetupat: %.2f\n", limasBelahKetupat.hitungVolume());
+                            limasBelahKetupat.prosesInputDanValidasi();
                             break;
                         case 15:
                             PrismaBelahKetupat prismaBelahKetupat = new PrismaBelahKetupat(8, 10, 8, 12);
                             System.out.printf("Luas Permukaan Prisma BelahKetupat: %.2f\n", prismaBelahKetupat.hitungLuasPermukaan());
                             System.out.printf("Volume Prisma BelahKetupat: %.2f\n", prismaBelahKetupat.hitungVolume());
+                            prismaBelahKetupat.prosesInputDanValidasi();
                             break;
                         case 16:
                             LimasLayangLayang limasLayangLayang = new LimasLayangLayang(5, 10, 12, 8, 14);
                             System.out.printf("Luas Permukaan Limas LayangLayang: %.2f\n", limasLayangLayang.hitungLuasPermukaan());
                             System.out.printf("Volume Limas LayangLayang: %.2f\n", limasLayangLayang.hitungVolume());
+                            limasLayangLayang.prosesInputDanValidasi(); 
                             break;
                         case 17:
                             PrismaLayangLayang prismaLayangLayang = new PrismaLayangLayang(8, 10, 8, 12, 14);
                             System.out.printf("Luas Permukaan Prisma LayangLayang: %.2f\n", prismaLayangLayang.hitungLuasPermukaan());
                             System.out.printf("Volume Prisma LayangLayang: %.2f\n", prismaLayangLayang.hitungVolume());
+                            prismaLayangLayang.prosesInputDanValidasi();
                             break;
                         case 18:
                             LimasSegitiga limasSegitiga = new LimasSegitiga(5, 10, 12);
                             System.out.printf("Luas Permukaan Limas Segitiga: %.2f\n", limasSegitiga.hitungLuasPermukaan());
                             System.out.printf("Volume Limas Segitiga: %.2f\n", limasSegitiga.hitungVolume());
+                            limasSegitiga.prosesInputDanValidasi();
                             break;
                         case 19:
                             PrismaSegitiga prismaSegitiga = new PrismaSegitiga(8, 10, 14);
                             System.out.printf("Luas Permukaan Prisma Segitiga: %.2f\n", prismaSegitiga.hitungLuasPermukaan());
                             System.out.printf("Volume Prisma Segitiga: %.2f\n", prismaSegitiga.hitungVolume());
+                            prismaSegitiga.prosesInputDanValidasi();
                             break;
                         case 20:
                             LimasJajarGenjang limasJajarGenjang = new LimasJajarGenjang(5, 10, 12, 8, 10);
                             System.out.printf("Luas Permukaan Limas JajarGenjang: %.2f\n", limasJajarGenjang.hitungLuasPermukaan());
                             System.out.printf("Volume Limas JajarGenjang: %.2f\n", limasJajarGenjang.hitungVolume());
+                            limasJajarGenjang.prosesInputDanValidasi();
                             break;
                         case 21:
                             PrismaJajarGenjang prismaJajarGenjang = new PrismaJajarGenjang(8, 10, 14, 8, 12);
                             System.out.printf("Luas Permukaan Prisma JajarGenjang: %.2f\n", prismaJajarGenjang.hitungLuasPermukaan());
                             System.out.printf("Volume Prisma JajarGenjang: %.2f\n", prismaJajarGenjang.hitungVolume());
+                            prismaJajarGenjang.prosesInputDanValidasi();
                             break;
                         case 22:
                             LimasTrapesium limasTrapesium = new LimasTrapesium(5, 10, 12, 8, 10);
                             System.out.printf("Luas Permukaan Limas Trapesium: %.2f\n", limasTrapesium.hitungLuasPermukaan());
                             System.out.printf("Volume Limas Trapesium: %.2f\n", limasTrapesium.hitungVolume());
+                            limasTrapesium.prosesInputDanValidasi();
                             break;
                         case 23:
                             PrismaTrapesium prismaTrapesium = new PrismaTrapesium(8, 10, 14, 8, 12);
                             System.out.printf("Luas Permukaan Prisma Trapesium: %.2f\n", prismaTrapesium.hitungLuasPermukaan());
                             System.out.printf("Volume Prisma Trapesium: %.2f\n", prismaTrapesium.hitungVolume());
+                            prismaTrapesium.prosesInputDanValidasi();
                             break;
                         case 24:
                             Balok balok = new Balok(10, 12, 15);
@@ -193,6 +209,7 @@ public class Main {
                             LimasPersegiPanjang limasPersegiPanjang = new LimasPersegiPanjang(8, 10, 12);
                             System.out.printf("Luas Permukaan Limas PersegiPanjang: %.2f\n", limasPersegiPanjang.hitungLuasPermukaan());
                             System.out.printf("Volume Limas PersegiPanjang: %.2f\n", limasPersegiPanjang.hitungVolume());
+                            limasPersegiPanjang.prosesInputDanValidasi();
                             break;
                         case 26:
                             PrismaPersegiPanjang prismaPersegiPanjang = new PrismaPersegiPanjang(8, 10, 14);
@@ -209,26 +226,31 @@ public class Main {
                             CincinBola cincinBola = new CincinBola(7, 14);
                             System.out.printf("Luas Permukaan CincinBola: %.2f\n", cincinBola.hitungLuasPermukaan());
                             System.out.printf("Volume CincinBola: %.2f\n", cincinBola.hitungVolume());
+                            cincinBola.prosesInputDanValidasi();
                             break;
                         case 29:
                             JuringBola juringBola = new JuringBola(7, 60);
                             System.out.printf("Luas Permukaan JuringBola: %.2f\n", juringBola.hitungLuasPermukaan());
                             System.out.printf("Volume JuringBola: %.2f\n", juringBola.hitungVolume());
+                            juringBola.prosesInputDanValidasi();
                             break;
                         case 30:
                             TemberengBola temberengBola = new TemberengBola(7, 21);
                             System.out.printf("Luas Permukaan TemberengBola: %.2f\n", temberengBola.hitungLuasPermukaan());
                             System.out.printf("Volume TemberengBola: %.2f\n", temberengBola.hitungVolume());
+                            temberengBola.prosesInputDanValidasi();
                             break;
                         case 31:
                             Kerucut kerucut = new Kerucut(7, 12);
                             System.out.printf("Luas Permukaan Kerucut: %.2f\n", kerucut.hitungLuasPermukaan());
                             System.out.printf("Volume Kerucut: %.2f\n", kerucut.hitungVolume());
+                            kerucut.prosesInputDanValidasi();
                             break;
                         case 32:
                             KerucutTerpancung kerucutTerpancung = new KerucutTerpancung(7, 7, 14);
                             System.out.printf("Luas Permukaan kerucut Terpancung: %.2f\n", kerucutTerpancung.hitungLuasPermukaan());
                             System.out.printf("Volume Kerucut Terpancung: %.2f\n", kerucutTerpancung.hitungVolume());
+                            kerucutTerpancung.prosesInputDanValidasi();
                             break;
                         case 33:
                             Tabung tabung = new Tabung(7, 10);
@@ -247,6 +269,9 @@ public class Main {
                             break;
                         case 35:
                             System.out.println("Terimakasih Telah menggunakan Program ini.");
+                            System.out.println("Program akan keluar...");
+                            lanjutMenu = false;
+                            input.close();
                             break;
                         case 36:
                              System.out.print("Masukkan jumlah objek per bentuk geometri untuk digenerate: ");
@@ -294,7 +319,7 @@ public class Main {
                 return true;
             } else if (jawaban.equals("n") || jawaban.equals("tidak")) {
                 System.out.println("Program akan keluar...");
-                return false;
+                System.exit(0);
             } else {
                 System.out.println("Input tidak dikenali. Silakan masukkan 'y' atau 'n'.");
             }

@@ -76,4 +76,16 @@ public class LimasPersegi extends Persegi {
             }
         }
     }
+
+    public double getTinggi() {
+        return tinggi;
+    }
+
+    public double getVolume() {
+        return volume;
+    }
+
+    public double getLuasPermukaan() {
+        return luasPermukaan;
+    }
 }

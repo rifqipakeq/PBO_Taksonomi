@@ -1,4 +1,5 @@
 package projek_pbo;
+
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
@@ -15,12 +16,12 @@ public class PrismaPersegi extends Persegi {
     }
 
     public double hitungVolume() {
-        volume  =  super.luas * tinggi;
+        volume = super.hitungLuas() * tinggi;
         return volume;
     }
 
     public double hitungLuasPermukaan() {
-        luasPermukaan = 2 * super.luas + super.keliling * tinggi;
+        luasPermukaan = 2 * super.hitungLuas() + super.hitungKeliling() * tinggi;
         return luasPermukaan;
     }
 
@@ -30,7 +31,7 @@ public class PrismaPersegi extends Persegi {
     }
 
     public double hitungLuasPermukaan(double sisiBaru, double tinggiBaru) {
-        luasPermukaan = 2 * super.hitungLuas(sisiBaru) + super.hitungKeliling(tinggiBaru) * tinggiBaru;
+        luasPermukaan = 2 * super.hitungLuas(sisiBaru) + super.hitungKeliling(sisiBaru) * tinggiBaru;
         return luasPermukaan;
     }
 
@@ -56,8 +57,11 @@ public class PrismaPersegi extends Persegi {
                             System.out.println("Tinggi harus lebih dari nol.\n");
                             continue;
                         }
-                        volume = hitungVolume(newSisi, newTinggi);
-                        luasPermukaan = hitungLuasPermukaan(newSisi, newTinggi);
+                        // Update nilai sisi dan tinggi pada objek
+                        super.setSisi(newSisi);
+                        this.tinggi = newTinggi;
+                        volume = hitungVolume();
+                        luasPermukaan = hitungLuasPermukaan();
                         System.out.printf("\nLuas Permukaan Prisma Persegi: %.2f\n", luasPermukaan);
                         System.out.printf("Volume Prisma Persegi: %.2f\n", volume);
                         break;
@@ -75,7 +79,9 @@ public class PrismaPersegi extends Persegi {
             } else {
                 System.out.println("Jawaban hanya boleh Y atau N\n");
             } 
+
         }
     }
+    
 
 }
