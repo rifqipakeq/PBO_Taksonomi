@@ -1,6 +1,7 @@
 package projek_pbo;
 
-import java.util.*;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class Persegi extends BangunDatar {
     protected double sisi;
@@ -11,8 +12,9 @@ public class Persegi extends BangunDatar {
         this.sisi = sisi;
         this.luas = hitungLuas();
         this.keliling = hitungKeliling();
+
     }
- 
+
     @Override
     public double hitungLuas() {
         luas = sisi * sisi;
@@ -73,8 +75,15 @@ public class Persegi extends BangunDatar {
         }
     }
 
-    public double getSisi() {
-        return sisi;
+    public double getLuas() {
+        return luas;
+    }
+    public double getKeliling() {
+        return keliling;
+    }
+
+    public void setSisi(double sisi) {
+        this.sisi = sisi;
     }
 
 }                                   

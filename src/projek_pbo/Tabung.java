@@ -78,4 +78,22 @@ public class Tabung extends Lingkaran {
             }
         }
     }
+
+    public double getTinggi() {
+        return tinggi;
+    }
+
+    public void setTinggi(double tinggi) {
+        this.tinggi = tinggi;
+        this.hitungVolume();
+        this.hitungLuasPermukaan();
+    }
+
+    public double getVolume() {
+        return volume;
+    }
+
+    public double getLuasPermukaan() {
+        return luasPermukaan;
+    }
 }

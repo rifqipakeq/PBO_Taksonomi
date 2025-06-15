@@ -47,7 +47,7 @@ public class TemberengLingkaran extends Lingkaran {
         return keliling;
     }
     
-     public void prosesInputDanValidasi() {
+    public void prosesInputDanValidasi() {
         Scanner inp = new Scanner(System.in);
         while (true) {
             System.out.print("\nApakah ingin mengubah nilai jari-jari lingkaran dan sudut juring? (Y/N): ");
