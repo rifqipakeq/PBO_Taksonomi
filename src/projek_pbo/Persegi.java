@@ -4,6 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Persegi extends BangunDatar {
+
     protected double sisi;
     protected double luas;
     protected double keliling;
@@ -23,18 +24,18 @@ public class Persegi extends BangunDatar {
 
     @Override
     public double hitungKeliling() {
-        keliling =  4 * sisi;   
+        keliling = 4 * sisi;
         return keliling;
     }
 
-    public double hitungLuas(double sisiBaru){
-        luas = sisiBaru * sisiBaru;
-        return luas;
+    public double hitungLuas(double sisiBaru) {
+        this.sisi = sisiBaru;  // Update nilai sisi
+        return sisiBaru * sisiBaru;
     }
 
-    public double hitungKeliling(double sisiBaru){
-        keliling = 4 * sisiBaru;
-        return keliling;
+    public double hitungKeliling(double sisiBaru) {
+        this.sisi = sisiBaru;  // Update nilai sisi
+        return 4 * sisiBaru;
     }
 
     public void prosesInputDanValidasi() {
@@ -42,9 +43,9 @@ public class Persegi extends BangunDatar {
         while (true) {
             System.out.print("\nApkah ingin mengubah nilai sisi persegi? (Y/N): ");
             String jawab = inp.nextLine();
-            
+
             if (jawab.equalsIgnoreCase("Y")) {
-                while (true){
+                while (true) {
                     try {
                         System.out.print("Masukan sisi baru:");
                         double newSisi = inp.nextDouble();
@@ -59,13 +60,13 @@ public class Persegi extends BangunDatar {
                         System.out.printf("\nLuas Persegi: %.2f\n", luas);
                         System.out.printf("Keliling Persegi: %.2f\n", keliling);
                         break;
-                    } catch (InputMismatchException e){
+                    } catch (InputMismatchException e) {
                         System.out.println("Input tidak valid. Silakan masukkan angka yang benar.");
                         inp.nextLine();
                     }
                 }
                 break;
-            } else if (jawab.equalsIgnoreCase("N")){
+            } else if (jawab.equalsIgnoreCase("N")) {
                 luas = hitungLuas();
                 keliling = hitungKeliling();
                 break;
@@ -78,6 +79,7 @@ public class Persegi extends BangunDatar {
     public double getLuas() {
         return luas;
     }
+
     public double getKeliling() {
         return keliling;
     }
@@ -86,4 +88,8 @@ public class Persegi extends BangunDatar {
         this.sisi = sisi;
     }
 
-}                                   
+    public double getSisi() {
+        return sisi;
+    }
+
+}
