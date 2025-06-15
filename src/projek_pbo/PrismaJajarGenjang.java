@@ -65,6 +65,7 @@ public class PrismaJajarGenjang extends JajarGenjang {
                         inp.nextLine(); // Clear the invalid input
                     }
                 }
+                break;
             } else if (jawab.equalsIgnoreCase("N")) {
                 break; // Exit the loop if user does not want to change values
             } else {

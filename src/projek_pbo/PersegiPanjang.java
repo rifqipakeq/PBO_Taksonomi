@@ -12,6 +12,8 @@ public class PersegiPanjang extends BangunDatar {
     public PersegiPanjang(double panjang, double lebar) {   
         this.panjang = panjang;
         this.lebar = lebar;
+        this.luas = hitungLuas(); 
+        this.keliling = hitungKeliling(); 
     }
 
     @Override
@@ -66,6 +68,7 @@ public class PersegiPanjang extends BangunDatar {
                         inp.nextLine(); 
                     }
                 }
+                break;
             } else if (jawab.equalsIgnoreCase("N")) {
                 break;
             } else {

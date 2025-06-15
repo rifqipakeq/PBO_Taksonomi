@@ -69,6 +69,7 @@ public class PrismaLayangLayang extends LayangLayang {
                         inp.nextLine(); // Clear the invalid input
                     }
                 }
+                break;
             } else if (jawab.equalsIgnoreCase("N")) {
                 break; // Exit the loop if user does not want to change values
             } else {

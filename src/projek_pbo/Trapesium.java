@@ -68,12 +68,15 @@ public class Trapesium extends BangunDatar {
                         tinggi = newTinggi;
                         luas = hitungLuas(newAlasAtas, newAlasBawah, newSisiMiring, newTinggi);
                         keliling = hitungKeliling(newAlasAtas, newAlasBawah, newSisiMiring, newTinggi);
+                        System.out.printf("\nLuas Trapesium: %.2f\n", luas);
+                        System.out.printf("Keliling Trapesium: %.2f\n", keliling);
                         break; // keluar dari loop input
                     } catch (InputMismatchException e) {
                         System.out.println("Input tidak valid. Silakan masukkan angka yang benar.");
                         inp.nextLine(); // bersihkan input yang salah
                     }
                 }
+                break;
             } else if (jawab.equalsIgnoreCase("N")) {
                 break; // keluar dari loop jika tidak ingin mengubah nilai
             } else {

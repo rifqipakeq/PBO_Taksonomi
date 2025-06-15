@@ -67,6 +67,7 @@ public class Kerucut extends Lingkaran {
                         inp.nextLine(); // Clear the invalid input
                     }
                 }
+                break;
             } else if (jawab.equalsIgnoreCase("N")) {
                 break;
             } else {
