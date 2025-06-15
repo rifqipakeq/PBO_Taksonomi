@@ -81,7 +81,10 @@ public class JajarGenjang extends BangunDatar {
                         inp.nextLine(); // Clear the invalid input
                     }
                 }
+                break;
             } else if (jawab.equalsIgnoreCase("N")) {
+                luas = hitungLuas();
+                keliling = hitungKeliling();
                 break;
             } else {
                 System.out.println("Pilihan tidak valid. Silakan masukkan Y atau N.");

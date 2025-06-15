@@ -202,7 +202,7 @@ public class Main {
                         case 24:
                             Balok balok = new Balok(10, 12, 15);
                             System.out.printf("Luas Permukaan Balok: %.2f\n", balok.hitungLuasPermukaan());
-                            System.out.printf("Volume Limas Balok: %.2f\n", balok.hitungVolume());
+                            System.out.printf("Volume Balok: %.2f\n", balok.hitungVolume());
                             balok.prosesInputDanValidasi();
                             break;
                         case 25:

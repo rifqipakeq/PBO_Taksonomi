@@ -70,8 +70,8 @@ public class PrismaPersegi extends Persegi {
                         System.out.println("Input harus berupa angka.");
                         inp.nextLine();
                     }
-                    break;
                 }
+                break;
             } else if (jawab.equalsIgnoreCase("N")) {
                 luasPermukaan = hitungLuasPermukaan();
                 volume = hitungVolume();

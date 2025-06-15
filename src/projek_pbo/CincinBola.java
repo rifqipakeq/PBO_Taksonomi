@@ -65,6 +65,7 @@ public class CincinBola extends Bola {
                         inp.nextLine();
                     }
                 }
+                break;
             } else if (jawab.equalsIgnoreCase("N")) {
                 break;
             } else {

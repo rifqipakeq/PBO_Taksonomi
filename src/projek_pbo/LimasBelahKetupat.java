@@ -79,6 +79,7 @@ public class LimasBelahKetupat extends BelahKetupat {
                         inp.nextLine(); // bersihkan input buffer
                     }
                 }
+                break;
             } else if (jawab.equalsIgnoreCase("N")) {
                 break; // keluar dari loop jika tidak ingin mengubah nilai
             } else {

@@ -81,6 +81,7 @@ public class LimasLayangLayang extends LayangLayang {
                         inp.nextLine(); // bersihkan input yang salah
                     }
                 }
+                break;
             } else if (jawab.equalsIgnoreCase("N")) {
                 break; // keluar dari loop utama
             } else {

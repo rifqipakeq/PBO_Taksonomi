@@ -75,6 +75,7 @@ public class LimasJajarGenjang extends JajarGenjang {
                         inp.nextLine(); // Clear the invalid input
                     }
                 }
+                break;
             } else if (jawab.equalsIgnoreCase("N")) {
                 break;
             } else {

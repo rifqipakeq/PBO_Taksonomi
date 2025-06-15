@@ -65,6 +65,7 @@ public class Lingkaran extends BangunDatar {
                     }
                     break;
                 }
+                break;
             } else if (jawab.equalsIgnoreCase("N")) {
                 luas = hitungLuas();
                 keliling = hitungKeliling();

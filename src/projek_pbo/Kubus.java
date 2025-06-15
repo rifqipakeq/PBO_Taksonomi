@@ -59,6 +59,7 @@ public class Kubus extends Persegi{
                         inp.nextLine(); // Clear the invalid input
                     }
                 }
+                break;
             } else if (jawab.equalsIgnoreCase("N")) {
                 break;
             } else {
