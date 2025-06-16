@@ -3,7 +3,7 @@ package projek_pbo;
 import java.util.InputMismatchException;
 import java.util.*;
 
-public class Lingkaran extends BangunDatar {
+public class Lingkaran extends BangunDatar implements Runnable {
     protected double jariJari;
     protected final double PI = 3.14;
     protected double luas;
@@ -84,5 +84,28 @@ public class Lingkaran extends BangunDatar {
         return PI; 
     }
     
-    
+    @Override
+    public void run(){
+        String threadName = Thread.currentThread().getName();
+        System.out.printf("--- Thread [%s] sedang memproses objek Lingkaran ini ---\n", threadName);
+        
+        try {
+            // Simulasi kalkulasi
+            System.out.printf("[%s] Menghitung properti Lingkaran (jari-jari: %.2f)...\n", threadName, this.jariJari);
+            Thread.sleep(1500); // Jeda 1.5 detik
+            
+            // Objek ini memproses datanya sendiri
+            double luasDihitung = this.hitungLuas();
+            double kelilingDihitung = this.hitungKeliling();
+            
+            System.out.printf("[%s] Hasil Lingkaran -> Luas: %.2f, Keliling: %.2f\n", threadName, luasDihitung, kelilingDihitung);
+            
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            System.out.printf("Thread [%s] diinterupsi.\n", threadName);
+        }
+        System.out.printf("--- Thread [%s] selesai. ---\n", threadName);
+    }
+
+
 }

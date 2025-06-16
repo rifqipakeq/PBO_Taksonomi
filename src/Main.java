@@ -55,6 +55,7 @@ public class Main {
                 System.out.println("34. Polymorphism");
                 System.out.println("35. Exit");
                 System.out.println("36. Proses Geometri Acak dengan Thread pool");
+                System.out.println("37. Proses Geometri dengan Thread Runnable");
                 System.out.print("Masukkan pilihan anda : ");
 
                 try {
@@ -295,6 +296,36 @@ public class Main {
                                 System.out.println("Tidak ada objek geometri yang digenerate.");
                             }
                             break;
+                        
+                        case 37: 
+                            System.out.print("\n--- Menjalankan Proses Geometri dengan Thread Runnable ---\n");
+                            Lingkaran runnableLingkaran = new Lingkaran(7);
+                            Persegi runnablePersegi = new Persegi(5);
+                            Segitiga runnableSegitiga = new Segitiga(10, 4);
+
+                            System.out.println("Objek-objek telah dibuat. Memulai thread...");
+                            Thread threadLingkaran = new Thread(runnableLingkaran, "Thread-Lingkaran");
+                            Thread threadPersegi = new Thread(runnablePersegi, "Thread-Persegi");
+                            Thread threadSegitiga = new Thread(runnableSegitiga, "Thread-Segitiga");
+
+                            threadLingkaran.start();
+                            threadPersegi.start();
+                            threadSegitiga.start();
+
+                            System.out.println(">>> Perintah start untuk 3 thread telah dikirim. Thread 'main' lanjut...");
+
+                            try {
+                                threadLingkaran.join();
+                                threadPersegi.join();
+                                threadSegitiga.join();
+                            } catch (InterruptedException e) {
+                                System.err.println("Thread utama diintrupsi saat menunggu thread lain selesai.");
+                                Thread.currentThread().interrupt();
+                            }
+                            System.out.println(">>> Semua thread telah selesai. Thread 'main' berakhir.");
+                            lanjutMenu = true;
+                            break;
+
                         default:
                             System.out.println("Pilihan tidak valid. Silakan coba lagi.");
                     }

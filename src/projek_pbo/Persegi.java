@@ -3,7 +3,7 @@ package projek_pbo;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Persegi extends BangunDatar {
+public class Persegi extends BangunDatar implements Runnable {
 
     protected double sisi;
     protected double luas;
@@ -91,5 +91,26 @@ public class Persegi extends BangunDatar {
     public double getSisi() {
         return sisi;
     }
+
+    @Override
+    public void run() {
+        String threadName = Thread.currentThread().getName();
+        System.out.printf("--- Thread [%s] sedang memproses objek Persegi ---\n", threadName);
+        try {
+            System.out.printf("[%s] Menghitung properti Persegi (sisi: %.2f)...\n", threadName, this.sisi);
+            Thread.sleep(1500);
+            double luasDihitung = this.hitungLuas();
+            double kelilingDihitung = this.hitungKeliling();
+            System.out.printf("[%s] Hasil Persegi -> Luas: %.2f, Keliling: %.2f\n", threadName, luasDihitung, kelilingDihitung);
+
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            System.out.printf("Thread [%s] diinterupsi.\n", threadName);
+        }
+        System.out.printf("Thread [%s] selesai.\n", threadName);
+    
+    }
+
+
 
 }
