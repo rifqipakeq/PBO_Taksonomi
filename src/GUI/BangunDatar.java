@@ -1,190 +1,204 @@
 package GUI;
 
-    import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;
 
-    import projek_pbo.*;
+import projek_pbo.*;
 
-    public class BangunDatar extends javax.swing.JPanel {
+public class BangunDatar extends javax.swing.JPanel {
 
-        private Lingkaran lingkaran;
-        private Persegi persegi;
-        private PersegiPanjang persegiPanjang;
-        private Segitiga segitiga;
-        private JajarGenjang jajarGenjang;
-        private Trapesium trapesium;
-        private LayangLayang layangLayang;
-        private BelahKetupat belahKetupat;
-        
-        public BangunDatar() {
-            initComponents();
-            inisialisasiBangunDatar();
-            tambahkanListener();
-        }
+    private Lingkaran lingkaran;
+    private Persegi persegi;
+    private PersegiPanjang persegiPanjang;
+    private Segitiga segitiga;
+    private JajarGenjang jajarGenjang;
+    private Trapesium trapesium;
+    private LayangLayang layangLayang;
+    private BelahKetupat belahKetupat;
+    private JuringLingkaran juringLingkaran;
+    private TemberengLingkaran temberengLingkaran;
 
-        private void inisialisasiBangunDatar() {
-            // Inisialisasi semua bangun datar dengan nilai default
-            this.persegi = new Persegi(5.0);
-            this.lingkaran = new Lingkaran(7.0);
-            this.persegiPanjang = new PersegiPanjang(4.0, 6.0);
-            this.segitiga = new Segitiga(3.0, 4.0);
-            this.jajarGenjang = new JajarGenjang(5.0, 7.0, 4.0, 5.0);
-            this.trapesium = new Trapesium(5.0, 7.0, 4.0, 4.0);
-            this.layangLayang = new LayangLayang(5.0, 7.0, 4.0, 4.0);
-            this.belahKetupat = new BelahKetupat(5.0, 7.0, 4.0);
-        }
-        
-        private void tambahkanListener() {
-            // Listener untuk tombol Hitung
-            btnHitung.addActionListener(e -> hitungBangunDatar());
+    public BangunDatar() {
+        initComponents();
+        inisialisasiBangunDatar();
+        tambahkanListener();
+    }
 
-            // Listener untuk tombol Ya (ubah nilai)
-            jButton2.addActionListener(e -> tampilkanFormUbahNilai());
+    private void inisialisasiBangunDatar() {
+        // Inisialisasi semua bangun datar dengan nilai default
+        this.persegi = new Persegi(5.0);
+        this.lingkaran = new Lingkaran(7.0);
+        this.persegiPanjang = new PersegiPanjang(4.0, 6.0);
+        this.segitiga = new Segitiga(3.0, 4.0);
+        this.jajarGenjang = new JajarGenjang(5.0, 7.0, 4.0, 5.0);
+        this.trapesium = new Trapesium(5.0, 7.0, 4.0, 4.0);
+        this.layangLayang = new LayangLayang(5.0, 7.0, 4.0, 4.0);
+        this.belahKetupat = new BelahKetupat(5.0, 7.0, 4.0);
+        this.juringLingkaran = new JuringLingkaran(7.0, 45.0);
+        this.temberengLingkaran = new TemberengLingkaran(7.0, 45.0);
+    }
 
-            // Listener untuk tombol Tidak
-            jButton3.addActionListener(e -> {
-                // Kembali ke GUI utama atau tutup form
-                JOptionPane.showMessageDialog(this, "Perhitungan selesai", "Info", JOptionPane.INFORMATION_MESSAGE);
-            });
-        }
+    private void tambahkanListener() {
+        // Listener untuk tombol Hitung
+        btnHitung.addActionListener(e -> hitungBangunDatar());
 
-        private void hitungBangunDatar() {
-            String pilihan = (String) jComboBox1.getSelectedItem();
-            // Tambahkan validasi
-            if(pilihan == null || pilihan.trim().isEmpty() || pilihan.equals(" ")) {
-                JOptionPane.showMessageDialog(this, "Pilih bangun datar yang valid", "Error", 
+        // Listener untuk tombol Ya (ubah nilai)
+        jButton2.addActionListener(e -> tampilkanFormUbahNilai());
+
+        // Listener untuk tombol Tidak
+        jButton3.addActionListener(e -> {
+            // Kembali ke GUI utama atau tutup form
+            JOptionPane.showMessageDialog(this, "Perhitungan selesai", "Info", JOptionPane.INFORMATION_MESSAGE);
+        });
+    }
+
+    private void hitungBangunDatar() {
+        String pilihan = (String) jComboBox1.getSelectedItem();
+        // Tambahkan validasi
+        if (pilihan == null || pilihan.trim().isEmpty() || pilihan.equals(" ")) {
+            JOptionPane.showMessageDialog(this, "Pilih bangun datar yang valid", "Error",
                     JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-
-            String hasil = "";
-
-            try {
-                switch (pilihan) {
-                    case "Persegi":
-                        hasil = String.format("Luas: %.2f\nKeliling: %.2f", 
-                                persegi.hitungLuas(), persegi.hitungKeliling());
-                        break;
-                    case "Lingkaran":
-                        hasil = String.format("Luas: %.2f\nKeliling: %.2f", 
-                                lingkaran.hitungLuas(), lingkaran.hitungKeliling());
-                        break;
-                    case "Persegi Panjang":
-                        hasil = String.format("Luas: %.2f\nKeliling: %.2f", 
-                                persegiPanjang.hitungLuas(), persegiPanjang.hitungKeliling());
-                        break;
-                    case "Segitiga":
-                        hasil = String.format("Luas: %.2f\nKeliling: %.2f", 
-                                segitiga.hitungLuas(), segitiga.hitungKeliling());
-                        break;
-                    case "Jajar Genjang":
-                        hasil = String.format("Luas: %.2f\nKeliling: %.2f", 
-                                jajarGenjang.hitungLuas(), jajarGenjang.hitungKeliling());
-                        break;
-                    case "Trapesium":
-                        hasil = String.format("Luas: %.2f\nKeliling: %.2f", 
-                                trapesium.hitungLuas(), trapesium.hitungKeliling());
-                        break;
-                    case "Layang-Layang":
-                        hasil = String.format("Luas: %.2f\nKeliling: %.2f", 
-                                layangLayang.hitungLuas(), layangLayang.hitungKeliling());
-                        break;
-                    case "Belah Ketupat":
-                        hasil = String.format("Luas: %.2f\nKeliling: %.2f", 
-                                belahKetupat.hitungLuas(), belahKetupat.hitungKeliling());
-                        break;
-                    
-                    default:
-                        hasil = "Pilih bangun datar yang valid";
-                }   
-
-                HasilAwal.setText(hasil);
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(this, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-            }
+            return;
         }
 
-        private void tampilkanFormUbahNilai() {
-            String pilihan = (String) jComboBox1.getSelectedItem();
-            javax.swing.JTabbedPane tabbedPane = (javax.swing.JTabbedPane) this.getParent();
+        String hasil = "";
 
-            try {
-                switch (pilihan) {
-                    case "Persegi":
-                        PilihPersegi panelPersegi = new PilihPersegi();
-                        panelPersegi.setPersegi(persegi);
-                        panelPersegi.SisiBaru.setText(String.valueOf(persegi.getSisi()));
-                        tabbedPane.addTab("Ubah Persegi", panelPersegi);
-                        tabbedPane.setSelectedComponent(panelPersegi);
-                        break;
-                    case "Lingkaran":
-                        PilihLingkaran panelLingkaran = new PilihLingkaran();
-                        panelLingkaran.setLingkaran(lingkaran);
-                        panelLingkaran.Jari2_Baru.setText(String.valueOf(lingkaran.getJariJari()));
-                        tabbedPane.addTab("Ubah Lingkaran", panelLingkaran);
-                        tabbedPane.setSelectedComponent(panelLingkaran);
-                        break;
-                    case "Persegi Panjang":
-                        PilihPersegiPanjang panelPersegiPanjang = new PilihPersegiPanjang();
-                        panelPersegiPanjang.setPersegiPanjang(persegiPanjang);
-                        panelPersegiPanjang.panjangBaru.setText(String.valueOf(persegiPanjang.getPanjang()));
-                        panelPersegiPanjang.lebarBaru.setText(String.valueOf(persegiPanjang.getLebar()));
-                        tabbedPane.addTab("Ubah Persegi Panjang", panelPersegiPanjang);
-                        tabbedPane.setSelectedComponent(panelPersegiPanjang);
-                        break;
-                        case "Jajar Genjang":
-                        PilihJajarGenjang panelJajarGenjang = new PilihJajarGenjang();
-                        panelJajarGenjang.setJajarGenjang(jajarGenjang);
-                        panelJajarGenjang.alasBaru.setText(String.valueOf(jajarGenjang.getAlas()));
-                        panelJajarGenjang.tinggiBaru.setText(String.valueOf(jajarGenjang.getTinggi()));
-                        panelJajarGenjang.sisiABaru.setText(String.valueOf(jajarGenjang.getSisiA()));
-                        panelJajarGenjang.sisiBBaru.setText(String.valueOf(jajarGenjang.getSisiB()));
-                        tabbedPane.addTab("Ubah Jajar Genjang", panelJajarGenjang);
-                        tabbedPane.setSelectedComponent(panelJajarGenjang);
-                        break;
-                    case "Segitiga":
-                        PilihSegitiga panelSegitiga = new PilihSegitiga();
-                        panelSegitiga.setSegitiga(segitiga);
-                        panelSegitiga.alasBaru.setText(String.valueOf(segitiga.getAlas()));
-                        panelSegitiga.tinggiBaru.setText(String.valueOf(segitiga.getTinggi()));
-                        tabbedPane.addTab("Ubah Segitiga", panelSegitiga);
-                        tabbedPane.setSelectedComponent(panelSegitiga);
-                        break;            
-                    case "Trapesium":
-                        PilihTrapesium panelTrapesium = new PilihTrapesium();
-                        panelTrapesium.setTrapesium(trapesium);
-                        panelTrapesium.AlasAtasBaru.setText(String.valueOf(trapesium.getAlasAtas()));
-                        panelTrapesium.AlasBawahBaru.setText(String.valueOf(trapesium.getAlasBawah()));
-                        panelTrapesium.TinggiBaru.setText(String.valueOf(trapesium.getTinggi()));
-                        panelTrapesium.SisiMiringBaru.setText(String.valueOf(trapesium.getSisiMiring()));
-                        tabbedPane.addTab("Ubah Trapesium", panelTrapesium);
-                        tabbedPane.setSelectedComponent(panelTrapesium);
-                        break;
-//                    case "Layang-Layang":
-//                        PilihLayangLayang panelLayangLayang = new PilihLayangLayang();    
-//                        panelLayangLayang.setLayangLayang(layangLayang);
-//                        panelLayangLayang.Diagonal1Baru.setText(String.valueOf(layangLayang.getDiagonal1()));
-//                        panelLayangLayang.Diagonal2Baru.setText(String.valueOf(layangLayang.getDiagonal2()));
-//                        panelLayangLayang.SisiABaru.setText(String.valueOf(layangLayang.getSisiA()));
-//                        panelLayangLayang.SisiBBaru.setText(String.valueOf(layangLayang.getSisiB()));
-//                        tabbedPane.addTab("Ubah Layang-Layang", panelLayangLayang);
-//                        tabbedPane.setSelectedComponent(panelLayangLayang);
-//                        break;
-                    case "Belah Ketupat":
-                        PilihBelahKetupat panelBelahKetupat = new PilihBelahKetupat();
-                        panelBelahKetupat.setBelahKetupat(belahKetupat);
-                        panelBelahKetupat.diagonal1Baru.setText(String.valueOf(belahKetupat.getDiagonal1()));
-                        panelBelahKetupat.diagonal2Baru.setText(String.valueOf(belahKetupat.getDiagonal2()));
-                        tabbedPane.addTab("Ubah Belah Ketupat", panelBelahKetupat);
-                        tabbedPane.setSelectedComponent(panelBelahKetupat);
-                        break;
-                    default:
-                        JOptionPane.showMessageDialog(this, "Fitur ubah nilai belum tersedia untuk " + pilihan, 
-                                "Info", JOptionPane.INFORMATION_MESSAGE);
-                }
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(this, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        try {
+            switch (pilihan) {
+                case "Persegi":
+                    hasil = String.format("Luas: %.2f\nKeliling: %.2f",
+                            persegi.hitungLuas(), persegi.hitungKeliling());
+                    break;
+                case "Lingkaran":
+                    hasil = String.format("Luas: %.2f\nKeliling: %.2f",
+                            lingkaran.hitungLuas(), lingkaran.hitungKeliling());
+                    break;
+                case "Persegi Panjang":
+                    hasil = String.format("Luas: %.2f\nKeliling: %.2f",
+                            persegiPanjang.hitungLuas(), persegiPanjang.hitungKeliling());
+                    break;
+                case "Segitiga":
+                    hasil = String.format("Luas: %.2f\nKeliling: %.2f",
+                            segitiga.hitungLuas(), segitiga.hitungKeliling());
+                    break;
+                case "Jajar Genjang":
+                    hasil = String.format("Luas: %.2f\nKeliling: %.2f",
+                            jajarGenjang.hitungLuas(), jajarGenjang.hitungKeliling());
+                    break;
+                case "Trapesium":
+                    hasil = String.format("Luas: %.2f\nKeliling: %.2f",
+                            trapesium.hitungLuas(), trapesium.hitungKeliling());
+                    break;
+                case "Layang-Layang":
+                    hasil = String.format("Luas: %.2f\nKeliling: %.2f",
+                            layangLayang.hitungLuas(), layangLayang.hitungKeliling());
+                    break;
+                case "Belah Ketupat":
+                    hasil = String.format("Luas: %.2f\nKeliling: %.2f",
+                            belahKetupat.hitungLuas(), belahKetupat.hitungKeliling());
+                    break;
+                case "Juring Lingkaran":
+                    hasil = String.format("Luas: %.2f\nKeliling: %.2f",
+                            juringLingkaran.hitungLuas(),
+                            juringLingkaran.hitungKeliling());
+                    break;
+                case "Tembereng Lingkaran":
+                    hasil = String.format("Luas: %.2f\nKeliling: %.2f",
+                            temberengLingkaran.hitungLuas(),
+                            temberengLingkaran.hitungKeliling());
+                    break;
+
+                default:
+                    hasil = "Pilih bangun datar yang valid";
             }
+
+            HasilAwal.setText(hasil);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
+    }
+
+    private void tampilkanFormUbahNilai() {
+        String pilihan = (String) jComboBox1.getSelectedItem();
+        javax.swing.JTabbedPane tabbedPane = (javax.swing.JTabbedPane) this.getParent();
+
+        try {
+            switch (pilihan) {
+                case "Persegi":
+                    PilihPersegi panelPersegi = new PilihPersegi();
+                    panelPersegi.setPersegi(persegi);
+                    panelPersegi.SisiBaru.setText(String.valueOf(persegi.getSisi()));
+                    tabbedPane.addTab("Ubah Persegi", panelPersegi);
+                    tabbedPane.setSelectedComponent(panelPersegi);
+                    break;
+                case "Lingkaran":
+                    PilihLingkaran panelLingkaran = new PilihLingkaran();
+                    panelLingkaran.setLingkaran(lingkaran);
+                    panelLingkaran.Jari2_Baru.setText(String.valueOf(lingkaran.getJariJari()));
+                    tabbedPane.addTab("Ubah Lingkaran", panelLingkaran);
+                    tabbedPane.setSelectedComponent(panelLingkaran);
+                    break;
+                case "Persegi Panjang":
+                    PilihPersegiPanjang panelPersegiPanjang = new PilihPersegiPanjang();
+                    panelPersegiPanjang.setPersegiPanjang(persegiPanjang);
+                    panelPersegiPanjang.panjangBaru.setText(String.valueOf(persegiPanjang.getPanjang()));
+                    panelPersegiPanjang.lebarBaru.setText(String.valueOf(persegiPanjang.getLebar()));
+                    tabbedPane.addTab("Ubah Persegi Panjang", panelPersegiPanjang);
+                    tabbedPane.setSelectedComponent(panelPersegiPanjang);
+                    break;
+                case "Jajar Genjang":
+                    PilihJajarGenjang panelJajarGenjang = new PilihJajarGenjang();
+                    panelJajarGenjang.setJajarGenjang(jajarGenjang);
+                    panelJajarGenjang.alasBaru.setText(String.valueOf(jajarGenjang.getAlas()));
+                    panelJajarGenjang.tinggiBaru.setText(String.valueOf(jajarGenjang.getTinggi()));
+                    panelJajarGenjang.sisiABaru.setText(String.valueOf(jajarGenjang.getSisiA()));
+                    panelJajarGenjang.sisiBBaru.setText(String.valueOf(jajarGenjang.getSisiB()));
+                    tabbedPane.addTab("Ubah Jajar Genjang", panelJajarGenjang);
+                    tabbedPane.setSelectedComponent(panelJajarGenjang);
+                    break;
+                case "Segitiga":
+                    PilihSegitiga panelSegitiga = new PilihSegitiga();
+                    panelSegitiga.setSegitiga(segitiga);
+                    panelSegitiga.alasBaru.setText(String.valueOf(segitiga.getAlas()));
+                    panelSegitiga.tinggiBaru.setText(String.valueOf(segitiga.getTinggi()));
+                    tabbedPane.addTab("Ubah Segitiga", panelSegitiga);
+                    tabbedPane.setSelectedComponent(panelSegitiga);
+                    break;
+                case "Trapesium":
+                    PilihTrapesium panelTrapesium = new PilihTrapesium();
+                    panelTrapesium.setTrapesium(trapesium);
+                    panelTrapesium.AlasAtasBaru.setText(String.valueOf(trapesium.getAlasAtas()));
+                    panelTrapesium.AlasBawahBaru.setText(String.valueOf(trapesium.getAlasBawah()));
+                    panelTrapesium.TinggiBaru.setText(String.valueOf(trapesium.getTinggi()));
+                    panelTrapesium.SisiMiringBaru.setText(String.valueOf(trapesium.getSisiMiring()));
+                    tabbedPane.addTab("Ubah Trapesium", panelTrapesium);
+                    tabbedPane.setSelectedComponent(panelTrapesium);
+                    break;
+                case "Layang-Layang":
+                    PilihLayangLayang panelLayangLayang = new PilihLayangLayang();
+                    panelLayangLayang.setLayangLayang(layangLayang);
+                    panelLayangLayang.diagonal1Baru.setText(String.valueOf(layangLayang.getDiagonal1()));
+                    panelLayangLayang.diagonal2Baru.setText(String.valueOf(layangLayang.getDiagonal2()));
+                    panelLayangLayang.SisiPendekBaru.setText(String.valueOf(layangLayang.getSisiPendek()));
+                    panelLayangLayang.SisiPanjangBaru.setText(String.valueOf(layangLayang.getSisiPanjang()));
+                    tabbedPane.addTab("Ubah Layang-Layang", panelLayangLayang);
+                    tabbedPane.setSelectedComponent(panelLayangLayang);
+                    break;
+                case "Belah Ketupat":
+                    PilihBelahKetupat panelBelahKetupat = new PilihBelahKetupat();
+                    panelBelahKetupat.setBelahKetupat(belahKetupat);
+                    panelBelahKetupat.diagonal1Baru.setText(String.valueOf(belahKetupat.getDiagonal1()));
+                    panelBelahKetupat.diagonal2Baru.setText(String.valueOf(belahKetupat.getDiagonal2()));
+                    tabbedPane.addTab("Ubah Belah Ketupat", panelBelahKetupat);
+                    tabbedPane.setSelectedComponent(panelBelahKetupat);
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(this, "Fitur ubah nilai belum tersedia untuk " + pilihan,
+                            "Info", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -216,6 +230,11 @@ package GUI;
         jLabel45.setText("Hasil Perhitungan");
 
         jButton2.setText("Ya");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel46.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel46.setText("Ingin Mengubah Nilai ?");
@@ -309,6 +328,10 @@ package GUI;
             }
         }
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

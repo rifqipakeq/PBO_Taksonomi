@@ -23,6 +23,14 @@ public class Bola extends Lingkaran {
         luasPermukaan = 4 * super.luas;
         return luasPermukaan;
     }
+
+    public double getVolume() {
+        return volume;
+    }
+
+    public double getLuasPermukaan() {
+        return luasPermukaan;
+    }
     
     public double hitungVolume(double jariJariBaru) {
         volume = (4.0 / 3.0) * PI * super.hitungLuas(jariJariBaru) * jariJariBaru;

@@ -28,8 +28,7 @@ public class BangunRuang extends javax.swing.JPanel {
     private PrismaJajarGenjang prismaJajarGenjang;
     private LimasPersegiPanjang limasPersegiPanjang;
     private PrismaPersegiPanjang prismaPersegiPanjang;
-    
-    
+
     public BangunRuang() {
         initComponents();
         inisialisasiBangunRuang();
@@ -62,13 +61,13 @@ public class BangunRuang extends javax.swing.JPanel {
         this.limasPersegiPanjang = new LimasPersegiPanjang(6.0, 8.0, 10.0);
         this.prismaPersegiPanjang = new PrismaPersegiPanjang(6.0, 8.0, 12.0);
     }
-    
+
     private void tambahkanListener() {
         // Listener untuk tombol Hitung
         btnHitung.addActionListener(e -> hitungBangunRuang());
 
-        // Listener untuk tombol Ya (ubah nilai)
-        // jButton2.addActionListener(e -> tampilkanFormUbahNilai());
+//         Listener untuk tombol Ya (ubah nilai)
+        jButton2.addActionListener(e -> tampilkanFormUbahNilai());
 
         // Listener untuk tombol Tidak
         jButton3.addActionListener(e -> {
@@ -77,119 +76,190 @@ public class BangunRuang extends javax.swing.JPanel {
     }
 
     private void hitungBangunRuang() {
-        String pilihan = (String) btnBangunRuang.getSelectedItem();
-        if(pilihan == null || pilihan.trim().isEmpty() || pilihan.equals(" ")) {
-            JOptionPane.showMessageDialog(this, "Pilih bangun ruang yang valid", "Error", 
-                JOptionPane.ERROR_MESSAGE);
+        String pilihan = (String) jComboBox1.getSelectedItem();
+        if (pilihan == null || pilihan.trim().isEmpty() || pilihan.equals(" ")) {
+            JOptionPane.showMessageDialog(this, "Pilih bangun ruang yang valid", "Error",
+                    JOptionPane.ERROR_MESSAGE);
             return;
         }
-    
+
         String hasil = "";
-    
+
         try {
             switch (pilihan) {
                 case "Kubus":
-                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f", 
+                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f",
                             kubus.hitungVolume(), kubus.hitungLuasPermukaan());
                     break;
                 case "Balok":
-                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f", 
+                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f",
                             balok.hitungVolume(), balok.hitungLuasPermukaan());
                     break;
                 case "Bola":
-                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f", 
+                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f",
                             bola.hitungVolume(), bola.hitungLuasPermukaan());
                     break;
                 case "Cincin Bola":
-                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f", 
+                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f",
                             cincinBola.hitungVolume(), cincinBola.hitungLuasPermukaan());
                     break;
                 case "Juring Bola":
-                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f", 
+                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f",
                             juringBola.hitungVolume(), juringBola.hitungLuasPermukaan());
                     break;
                 case "Tembereng Bola":
-                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f", 
+                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f",
                             temberengBola.hitungVolume(), temberengBola.hitungLuasPermukaan());
                     break;
                 case "Tabung":
-                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f", 
+                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f",
                             tabung.hitungVolume(), tabung.hitungLuasPermukaan());
                     break;
                 case "Kerucut":
-                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f", 
+                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f",
                             kerucut.hitungVolume(), kerucut.hitungLuasPermukaan());
                     break;
                 case "Kerucut Terpancung":
-                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f", 
+                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f",
                             kerucutTerpancung.hitungVolume(), kerucutTerpancung.hitungLuasPermukaan());
                     break;
-                // Add cases for all other shapes following the same pattern
+                case "Limas Persegi":
+                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f",
+                            limasPersegi.hitungVolume(), limasPersegi.hitungLuasPermukaan());
+                    break;
+                case "Prisma Persegi":
+                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f",
+                            prismaPersegi.hitungVolume(), prismaPersegi.hitungLuasPermukaan());
+                    break;
+                case "Limas Segitiga":
+                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f",
+                            limasSegitiga.hitungVolume(), limasSegitiga.hitungLuasPermukaan());
+                    break;
+                case "Prisma Segitiga":
+                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f",
+                            prismaSegitiga.hitungVolume(), prismaSegitiga.hitungLuasPermukaan());
+                    break;
+                case "Limas Persegi Panjang":
+                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f",
+                            limasPersegiPanjang.hitungVolume(), limasPersegiPanjang.hitungLuasPermukaan());
+                    break;
+                case "Prisma Persegi Panjang":
+                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f",
+                            prismaPersegiPanjang.hitungVolume(), prismaPersegiPanjang.hitungLuasPermukaan());
+                    break;
+                case "Limas BelahKetupat":
+                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f",
+                            limasBelahKetupat.hitungVolume(), limasBelahKetupat.hitungLuasPermukaan());
+                    break;
+                case "Prisma BelahKetupat":
+                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f",
+                            prismaBelahKetupat.hitungVolume(), prismaBelahKetupat.hitungLuasPermukaan());
+                    break;
+                case "Limas LayangLayang":
+                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f",
+                            limasLayangLayang.hitungVolume(), limasLayangLayang.hitungLuasPermukaan());
+                    break;
+                case "Prisma LayangLayang":
+                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f",
+                            prismaLayangLayang.hitungVolume(), prismaLayangLayang.hitungLuasPermukaan());
+                    break;
+                case "LimasTrapesium":
+                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f",
+                            limasTrapesium.hitungVolume(), limasTrapesium.hitungLuasPermukaan());
+                    break;
+                case "Prisma Trapesium":
+                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f",
+                            prismaTrapesium.hitungVolume(), prismaTrapesium.hitungLuasPermukaan());
+                    break;
+                case "Limas JajarGenjang":
+                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f",
+                            limasJajarGenjang.hitungVolume(), limasJajarGenjang.hitungLuasPermukaan());
+                    break;
+                case "Prisma JajarGenjang":
+                    hasil = String.format("Volume: %.2f\nLuas Permukaan: %.2f",
+                            prismaJajarGenjang.hitungVolume(), prismaJajarGenjang.hitungLuasPermukaan());
+                    break;
                 default:
                     hasil = "Pilih bangun ruang yang valid";
-            }   
-    
+            }
+
             HasilAwal.setText(hasil);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
-    // private void tampilkanFormUbahNilai() {
-    //     String pilihan = (String) jComboBox1.getSelectedItem();
-    //     javax.swing.JTabbedPane tabbedPane = (javax.swing.JTabbedPane) this.getParent();
+    private void tampilkanFormUbahNilai() {
+        String pilihan = (String) jComboBox1.getSelectedItem();
+        javax.swing.JTabbedPane tabbedPane = (javax.swing.JTabbedPane) this.getParent();
 
-    //     try {
-    //         switch (pilihan) {
-    //             case "Kubus":
-    //                 PilihKubus panelKubus = new PilihKubus();
-    //                 panelKubus.setKubus(kubus);
-    //                 panelKubus.sisiBaru.setText(String.valueOf(kubus.getSisi()));
-    //                 tabbedPane.addTab("Ubah Kubus", panelKubus);
-    //                 tabbedPane.setSelectedComponent(panelKubus);
-    //                 break;
-    //             case "Balok":
-    //                 PilihBalok panelBalok = new PilihBalok();
-    //                 panelBalok.setBalok(balok);
-    //                 panelBalok.panjangBaru.setText(String.valueOf(balok.getPanjang()));
-    //                 panelBalok.lebarBaru.setText(String.valueOf(balok.getLebar()));
-    //                 panelBalok.tinggiBaru.setText(String.valueOf(balok.getTinggi()));
-    //                 tabbedPane.addTab("Ubah Balok", panelBalok);
-    //                 tabbedPane.setSelectedComponent(panelBalok);
-    //                 break;
-    //             case "Bola":
-    //                 PilihBola panelBola = new PilihBola();
-    //                 panelBola.setBola(bola);
-    //                 panelBola.jariJariBaru.setText(String.valueOf(bola.getJariJari()));
-    //                 tabbedPane.addTab("Ubah Bola", panelBola);
-    //                 tabbedPane.setSelectedComponent(panelBola);
-    //                 break;
-    //             case "Tabung":
-    //                 PilihTabung panelTabung = new PilihTabung();
-    //                 panelTabung.setTabung(tabung);
-    //                 panelTabung.jariJariBaru.setText(String.valueOf(tabung.getJariJari()));
-    //                 panelTabung.tinggiBaru.setText(String.valueOf(tabung.getTinggi()));
-    //                 tabbedPane.addTab("Ubah Tabung", panelTabung);
-    //                 tabbedPane.setSelectedComponent(panelTabung);
-    //                 break;
-    //             case "Kerucut":
-    //                 PilihKerucut panelKerucut = new PilihKerucut();
-    //                 panelKerucut.setKerucut(kerucut);
-    //                 panelKerucut.jariJariBaru.setText(String.valueOf(kerucut.getJariJari()));
-    //                 panelKerucut.tinggiBaru.setText(String.valueOf(kerucut.getTinggi()));
-    //                 panelKerucut.garisPelukisBaru.setText(String.valueOf(kerucut.getGarisPelukis()));
-    //                 tabbedPane.addTab("Ubah Kerucut", panelKerucut);
-    //                 tabbedPane.setSelectedComponent(panelKerucut);
-    //                 break;
-    //             default:
-    //                 JOptionPane.showMessageDialog(this, "Fitur ubah nilai belum tersedia untuk " + pilihan, 
-    //                         "Info", JOptionPane.INFORMATION_MESSAGE);
-    //         }
-    //     } catch (Exception e) {
-    //         JOptionPane.showMessageDialog(this, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-    //     }
-    // }
-
+        try {
+            switch (pilihan) {
+                case "Kubus":
+                    PilihKubus panelKubus = new PilihKubus();
+                    panelKubus.setKubus(kubus);
+                    panelKubus.SisiBaru.setText(String.valueOf(kubus.getSisi()));
+                    tabbedPane.addTab("Ubah Kubus", panelKubus);
+                    tabbedPane.setSelectedComponent(panelKubus);
+                    break;
+                case "Balok":
+                    PilihBalok panelBalok = new PilihBalok();
+                    panelBalok.setBalok(balok);
+                    panelBalok.PanjangBaru.setText(String.valueOf(balok.getPanjang()));
+                    panelBalok.LebarBaru.setText(String.valueOf(balok.getLebar()));
+                    panelBalok.TinggiBaru.setText(String.valueOf(balok.getTinggi()));
+                    tabbedPane.addTab("Ubah Balok", panelBalok);
+                    tabbedPane.setSelectedComponent(panelBalok);
+                    break;
+                case "Bola":
+                    PilihBola panelBola = new PilihBola();
+                    panelBola.setBola(bola);
+                    panelBola.JariJariBaru.setText(String.valueOf(bola.getJariJari()));
+                    tabbedPane.addTab("Ubah Bola", panelBola);
+                    tabbedPane.setSelectedComponent(panelBola);
+                    break;
+                case "Tabung":
+                    PilihTabung panelTabung = new PilihTabung();
+                    panelTabung.setTabung(tabung);
+                    panelTabung.JariJariBaru.setText(String.valueOf(tabung.getJariJari()));
+                    panelTabung.TinggiBaru.setText(String.valueOf(tabung.getTinggi()));
+                    tabbedPane.addTab("Ubah Tabung", panelTabung);
+                    tabbedPane.setSelectedComponent(panelTabung);
+                    break;
+                case "Kerucut":
+                    PilihKerucut panelKerucut = new PilihKerucut();
+                    panelKerucut.setKerucut(kerucut);
+                    panelKerucut.JariJariBaru.setText(String.valueOf(kerucut.getJariJari()));
+                    panelKerucut.TinggiBaru.setText(String.valueOf(kerucut.getTinggi()));
+                    tabbedPane.addTab("Ubah Kerucut", panelKerucut);
+                    tabbedPane.setSelectedComponent(panelKerucut);
+                    break;
+                case "Cincin Bola":
+                    PilihCincinBola panelCincinBola = new PilihCincinBola();
+                    panelCincinBola.setCincinBola(cincinBola);
+                    panelCincinBola.JariJariBaru.setText(String.valueOf(cincinBola.getJariJari()));
+                    panelCincinBola.TinggiBaru.setText(String.valueOf(cincinBola.getTinggiCincin()));
+                    tabbedPane.addTab("Ubah CincinBola", panelCincinBola);
+                    tabbedPane.setSelectedComponent(panelCincinBola);
+                    break;
+                case "Limas Persegi Panjang":
+                    PilihLimasPersegiPanjang panelLimasPersegiPanjang = new PilihLimasPersegiPanjang();
+                    panelLimasPersegiPanjang.setLimasPersegiPanjang(limasPersegiPanjang);
+                    panelLimasPersegiPanjang.PanjangBaru.setText(String.valueOf(limasPersegiPanjang.getPanjang()));
+                    panelLimasPersegiPanjang.LebarBaru.setText(String.valueOf(limasPersegiPanjang.getLebar()));
+                    panelLimasPersegiPanjang.TinggiBaru.setText(String.valueOf(limasPersegiPanjang.getTinggi()));
+                    tabbedPane.addTab("Ubah limasPersegiPanjang", panelLimasPersegiPanjang);
+                    tabbedPane.setSelectedComponent(panelLimasPersegiPanjang);
+                    break;
+                    
+                default:
+                    JOptionPane.showMessageDialog(this, "Fitur ubah nilai belum tersedia untuk " + pilihan,
+                            "Info", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -197,7 +267,7 @@ public class BangunRuang extends javax.swing.JPanel {
 
         jLabel43 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
-        btnBangunRuang = new javax.swing.JComboBox<>();
+        jComboBox1 = new javax.swing.JComboBox<>();
         btnHitung = new javax.swing.JButton();
         HasilAwal = new javax.swing.JTextField();
         jLabel45 = new javax.swing.JLabel();
@@ -212,11 +282,11 @@ public class BangunRuang extends javax.swing.JPanel {
         jLabel44.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel44.setText("Silahkan Pilih Bangun");
 
-        btnBangunRuang.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        btnBangunRuang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bola", "Tabung", "Kerucut", "Kerucut Terpancung", "Kubus", "Balok", "Cincin Bola", "Juring Bola", "Tembereng Bola", "Prisma Segitiga", "Limas Segitiga", "Limas Persegi", "Prisma Persegi", "Limas Belah Ketupat", "Prisma Belah Ketupat", "Limas Layang-Layang", "Prisma Layang-Layang", "Limas Trapesium", "Prisma Trapesium", "Limas Jajar Genjang", "Prisma Jajar Genjang", "Limas Persegi Panjang", "Prisma Persegi Panjang" }));
-        btnBangunRuang.addActionListener(new java.awt.event.ActionListener() {
+        jComboBox1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kubus", "Balok", "Bola", "Cincin Bola", "Juring Bola", "Tembereng Bola", "Tabung", "Kerucut", "Kerucut Terpancung", "Limas Persegi Panjang", "Prisma Persegi Panjang", "Limas Persegi", "Prisma Persegi", "Limas Segitiga", "Prisma Segitiga", "Limas LayangLayang", "Prisma LayangLayang", "Limas BelahKetupat", "Prisma BelahKetupat", "Limas JajarGenjang", "Prisma JajarGenjang", "LimasTrapesium", "Prisma Trapesium", " ", " ", " " }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBangunRuangActionPerformed(evt);
+                jComboBox1ActionPerformed(evt);
             }
         });
 
@@ -226,6 +296,11 @@ public class BangunRuang extends javax.swing.JPanel {
         jLabel45.setText("Hasil Perhitungan");
 
         jButton2.setText("Ya");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel46.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel46.setText("Ingin Mengubah Nilai ?");
@@ -259,7 +334,7 @@ public class BangunRuang extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel44)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnBangunRuang, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -284,7 +359,7 @@ public class BangunRuang extends javax.swing.JPanel {
                 .addComponent(jLabel43)
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnBangunRuang, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                     .addComponent(jLabel44))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnHitung, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -320,18 +395,22 @@ public class BangunRuang extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnBackActionPerformed
 
-    private void btnBangunRuangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBangunRuangActionPerformed
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnBangunRuangActionPerformed
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField HasilAwal;
     private javax.swing.JButton btnBack;
-    private javax.swing.JComboBox<String> btnBangunRuang;
     private javax.swing.JButton btnHitung;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;

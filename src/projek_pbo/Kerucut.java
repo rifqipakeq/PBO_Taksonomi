@@ -21,6 +21,18 @@ public class Kerucut extends Lingkaran {
         return volume;
     }
 
+    public double getTinggi() {
+        return tinggi;
+    }
+
+    public double getVolume() {
+        return volume;
+    }
+
+    public double getLuasPermukaan() {
+        return luasPermukaan;
+    }
+
     public double hitungLuasPermukaan() {
         double r = super.getJariJari();
         double s = Math.sqrt(r * r + tinggi * tinggi); 

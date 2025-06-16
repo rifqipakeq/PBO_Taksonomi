@@ -34,7 +34,7 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btnBangunRuang" min="-2" pref="175" max="-2" attributes="0"/>
+                              <Component id="jComboBox1" min="-2" pref="175" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -71,7 +71,7 @@
               <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnBangunRuang" alignment="3" pref="34" max="32767" attributes="0"/>
+                  <Component id="jComboBox1" alignment="3" pref="34" max="32767" attributes="0"/>
                   <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -111,25 +111,44 @@
         <Property name="text" type="java.lang.String" value="Silahkan Pilih Bangun"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="btnBangunRuang">
+    <Component class="javax.swing.JComboBox" name="jComboBox1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="SansSerif" size="14" style="0"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="7">
-            <StringItem index="0" value="Persegi"/>
-            <StringItem index="1" value="Persegi Panjang"/>
-            <StringItem index="2" value="Segitiga"/>
-            <StringItem index="3" value="Lingkaran"/>
-            <StringItem index="4" value="Jajar Genjang"/>
-            <StringItem index="5" value="Trapesium"/>
-            <StringItem index="6" value=" "/>
+          <StringArray count="26">
+            <StringItem index="0" value="Kubus"/>
+            <StringItem index="1" value="Balok"/>
+            <StringItem index="2" value="Bola"/>
+            <StringItem index="3" value="Cincin Bola"/>
+            <StringItem index="4" value="Juring Bola"/>
+            <StringItem index="5" value="Tembereng Bola"/>
+            <StringItem index="6" value="Tabung"/>
+            <StringItem index="7" value="Kerucut"/>
+            <StringItem index="8" value="Kerucut Terpancung"/>
+            <StringItem index="9" value="Limas Persegi Panjang"/>
+            <StringItem index="10" value="Prisma Persegi Panjang"/>
+            <StringItem index="11" value="Limas Persegi"/>
+            <StringItem index="12" value="Prisma Persegi"/>
+            <StringItem index="13" value="Limas Segitiga"/>
+            <StringItem index="14" value="Prisma Segitiga"/>
+            <StringItem index="15" value="Limas LayangLayang"/>
+            <StringItem index="16" value="Prisma LayangLayang"/>
+            <StringItem index="17" value="Limas BelahKetupat"/>
+            <StringItem index="18" value="Prisma BelahKetupat"/>
+            <StringItem index="19" value="Limas JajarGenjang"/>
+            <StringItem index="20" value="Prisma JajarGenjang"/>
+            <StringItem index="21" value="LimasTrapesium"/>
+            <StringItem index="22" value="Prisma Trapesium"/>
+            <StringItem index="23" value=" "/>
+            <StringItem index="24" value=" "/>
+            <StringItem index="25" value=" "/>
           </StringArray>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBangunRuangActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -154,6 +173,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Ya"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel46">
       <Properties>

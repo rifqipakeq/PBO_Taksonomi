@@ -27,6 +27,19 @@ public class CincinBola extends Bola {
         return luasPermukaan;
     }
 
+    public double getTinggiCincin() {
+        return tinggiCincin;
+    }
+
+    public double getVolume() {
+        return volume;
+    }
+
+    public double getLuasPermukaan() {
+        return luasPermukaan;
+    }
+    
+    
     public double hitungVolume(double jariJariBaru, double tinggiCincinBaru) {
         volume = super.getPI() * tinggiCincinBaru * tinggiCincinBaru * (jariJariBaru - tinggiCincinBaru / 3.0);
         return volume;

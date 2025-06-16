@@ -86,6 +86,14 @@ public class LayangLayang extends BangunDatar {
         return sisiPendek;
     }
 
+    public double getDiagonal1() {
+        return diagonal1;
+    }
+
+    public double getDiagonal2() {
+        return diagonal2;
+    }
+
     public double getSisiPanjang(){
         return sisiPanjang;
     }

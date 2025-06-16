@@ -27,6 +27,10 @@ public class Balok extends PersegiPanjang {
         return luasPermukaan;
     }
 
+    public double getTinggi() {
+        return tinggi;
+    }
+    
     public double hitungVolume(double panjangBaru, double lebarBaru, double tinggiBaru){
         volume = super.hitungLuas(panjangBaru,lebarBaru) * tinggiBaru;
         return volume;
@@ -36,6 +40,15 @@ public class Balok extends PersegiPanjang {
         luasPermukaan = 2 * ((panjangBaru * lebarBaru) + (panjangBaru * tinggiBaru) + (lebarBaru * tinggiBaru));
         return luasPermukaan;
     }
+
+    public double getVolume() {
+        return volume;
+    }
+
+    public double getLuasPermukaan() {
+        return luasPermukaan;
+    }
+    
 
     public void prosesInputDanValidasi() {
         java.util.Scanner inp = new java.util.Scanner(System.in);
