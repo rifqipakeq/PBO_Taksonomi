@@ -9,6 +9,10 @@ import projek_pbo.*;
 public class ThreadExecutor {
 
     public static void processShapes(List<BendaGeometri> shapes) {
+//        ExecutorService executor = Executors.newFixedThreadPool(
+//                Runtime.getRuntime().availableProcessors()
+//        );
+        
         ExecutorService executor = Executors.newFixedThreadPool(4);
 
         for (BendaGeometri shape : shapes) {
@@ -16,6 +20,11 @@ public class ThreadExecutor {
         }
 
         executor.shutdown(); 
+        try {
+            executor.awaitTermination(Long.MAX_VALUE, java.util.concurrent.TimeUnit.NANOSECONDS);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
     }
 
     private static void processShape(BendaGeometri shape) {

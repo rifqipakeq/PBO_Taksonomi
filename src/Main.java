@@ -7,6 +7,7 @@ import java.util.List;
 import threading.ThreadExecutor;
 import java.util.*;
 import projek_pbo.*;
+import threading.ThreadExecutorSingle;
 
 public class Main {
 
@@ -53,8 +54,8 @@ public class Main {
                 System.out.println("32. Kerucut Terpancung ");
                 System.out.println("33. Tabung");
                 System.out.println("34. Polymorphism");
-                System.out.println("35. Exit");
-                System.out.println("36. Proses Geometri Acak dengan Thread pool");
+                System.out.println("35. Proses Geometri Acak dengan Single-Thread");
+                System.out.println("36. Proses Geometri Acak dengan Multi-Thread");
                 System.out.print("Masukkan pilihan anda : ");
 
                 try {
@@ -268,11 +269,29 @@ public class Main {
                             System.out.println("Luas PersegiPanjang (bd3): " + bd3.hitungLuas() + "Dan Keliling : " + bd3.hitungKeliling());
                             break;
                         case 35:
-                            System.out.println("Terimakasih Telah menggunakan Program ini.");
-                            System.out.println("Program akan keluar...");
-                            lanjutMenu = false;
-                            input.close();
-                            break;
+                            System.out.print("Masukkan jumlah objek per bentuk geometri untuk digenerate: ");
+                            int jumlahPerBentukSingle = input.nextInt();
+                            input.nextLine();
+                            shapes.clear();
+                            for (int i = 1; i <= 33; i++) {
+                                  for (int j = 0; j < jumlahPerBentukSingle; j++) {
+                                         try {
+                                           shapes.add(generateRandomBendaGeometri(i));
+                                        } catch (IllegalArgumentException e) {
+                                            System.out.println("Error saat generate bentuk geometri: " + e.getMessage());
+                                        }
+                                    }
+                                }
+                            if (!shapes.isEmpty()) {
+                                System.out.println("\nMemulai pemrosesan " + shapes.size() + " objek geometri dengan Single Thread...");
+                                long startTime = System.currentTimeMillis();
+                                ThreadExecutorSingle.processShapes(shapes);
+                                long endTime = System.currentTimeMillis();
+                                System.out.println("Waktu eksekusi single-thread: " + (endTime - startTime) + " ms");
+                            } else {
+                              System.out.println("Tidak ada objek geometri yang digenerate.");
+                            }
+                               break;
                         case 36:
                              System.out.print("Masukkan jumlah objek per bentuk geometri untuk digenerate: ");
                             int jumlahPerBentuk = input.nextInt();
@@ -289,8 +308,15 @@ public class Main {
                             }
                             if (!shapes.isEmpty()) {
                                 System.out.println("\nMemulai pemrosesan " + shapes.size() + " objek geometri dengan Thread Pool...");
+                                
+                                long startTime = System.currentTimeMillis();
+                                
                                 ThreadExecutor.processShapes(shapes);
+                                
+                                long endTime = System.currentTimeMillis();
+                                
                                 System.out.println("Pemrosesan selesai");
+                                System.out.println("Waktu eksekusi multi-thread: " + (endTime - startTime) + " ms");
                             } else {
                                 System.out.println("Tidak ada objek geometri yang digenerate.");
                             }
@@ -326,12 +352,14 @@ public class Main {
         }
     }
     
+    private static final Random rand = new Random(12345);
+     
     private static double r(){
-        return 1 + Math.random() * 10;
+        return 1 + rand.nextDouble() * 10;
     }
     
     private static double r(double min, double max){
-        return min + Math.random() * (max - min);
+        return min + rand.nextDouble() * (max - min);
     }
     
     private static BendaGeometri generateRandomBendaGeometri(int choice) {
